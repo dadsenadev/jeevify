@@ -1,0 +1,2258 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeevify (jeevify.in) — Calm, Adaptive AI for Intentional Living</title>
+  <meta name="description" content="Jeevify combines gentle, adaptive AI with mindful design to help you build healthy habits, stay focused, and take care of your mind and body — all in one place." />
+  
+  <!-- Google Fonts: Plus Jakarta Sans (Headings) & Inter (Body) & Noto Serif Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;600&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Configuration for Brand Tokens -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            alabaster: '#FAF8F5',
+            sand: '#F3EFEA',
+            stonewarm: '#E8E2D9',
+            sage: {
+              light: '#E6EFE8',
+              soft: '#C5D8C9',
+              DEFAULT: '#7C9A82',
+              deep: '#4A6B53'
+            },
+            forest: {
+              DEFAULT: '#1E3F35',
+              hover: '#163028',
+              light: '#2A5447'
+            },
+            charcoal: {
+              DEFAULT: '#1F2421',
+              muted: '#525B56',
+              subtle: '#78827C'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            devanagari: ['"Noto Serif Devanagari"', 'serif']
+          },
+          boxShadow: {
+            'soft': '0 12px 40px -12px rgba(30, 63, 53, 0.08)',
+            'elevated': '0 24px 60px -15px rgba(30, 63, 53, 0.14)',
+            'inner-calm': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.7)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom ambient animations & smooth scrollbars */
+    body {
+      background-color: #FAF8F5;
+      color: #1F2421;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      50% { transform: translate(-12px, 16px) scale(1.04); }
+    }
+
+    @keyframes floatReverse {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      50% { transform: translate(14px, -14px) scale(1.03); }
+    }
+
+    @keyframes pulseGentle {
+      0%, 100% { opacity: 0.55; }
+      50% { opacity: 0.85; }
+    }
+
+    .animate-blob-1 {
+      animation: floatSlow 12s ease-in-out infinite;
+    }
+
+    .animate-blob-2 {
+      animation: floatReverse 15s ease-in-out infinite;
+    }
+
+    .progress-ring-circle {
+      transition: stroke-dashoffset 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+
+    /* Glassmorphism utility */
+    .glass-nav {
+      background: rgba(250, 248, 245, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* Custom subtle grain texture overlay */
+    .bg-wellness-radial {
+      background: radial-gradient(circle at 80% 20%, rgba(230, 239, 232, 0.85) 0%, rgba(243, 239, 234, 0.5) 45%, rgba(250, 248, 245, 1) 100%);
+    }
+
+    /* Subtle AI Glow & Shimmer */
+    .ai-glow {
+      box-shadow: 0 0 0 1px rgba(124, 154, 130, 0.35), 0 12px 36px -8px rgba(30, 63, 53, 0.14);
+    }
+
+    @keyframes aiSparkle {
+      0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.85; }
+      50% { transform: scale(1.18) rotate(12deg); opacity: 1; }
+    }
+
+    .animate-sparkle {
+      animation: aiSparkle 3.5s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="font-sans selection:bg-sage-soft selection:text-forest">
+
+  <!-- ==================== STICKY NAVIGATION BAR ==================== -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-stonewarm/70 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo: Minimalist Leaf + Circle + Subtle AI Spark Emblem -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none" aria-label="Jeevify Home">
+        <div class="w-10 h-10 rounded-2xl bg-forest flex items-center justify-center text-alabaster shadow-sm group-hover:bg-forest-light transition-colors relative">
+          <svg class="w-6 h-6" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer life circle -->
+            <circle cx="16" cy="16" r="12" stroke="#E6EFE8" stroke-width="1.75" stroke-dasharray="56 18" stroke-linecap="round"/>
+            <!-- Organic sprouting leaf -->
+            <path d="M16 23C16 23 23 19.5 23 12.5C23 10.5 22 9 20 9C15.5 9 12 13.5 12 18.5C12 20.5 13.5 22.5 16 23Z" fill="#7C9A82" fill-opacity="0.35" stroke="#FAF8F5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 23V14.5" stroke="#FAF8F5" stroke-width="1.75" stroke-linecap="round"/>
+            <!-- Subtle AI Spark Accent -->
+            <path d="M23.5 5.5L24.2 7.3L26 8L24.2 8.7L23.5 10.5L22.8 8.7L21 8L22.8 7.3L23.5 5.5Z" fill="#C5D8C9"/>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-xl tracking-tight text-charcoal flex items-center gap-1.5">
+            Jeevify
+            <span class="inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-semibold bg-sage-light text-forest border border-sage-soft/70">AI</span>
+          </span>
+          <span class="text-[10px] uppercase tracking-widest text-charcoal-subtle -mt-0.5 font-medium">jeevify.in</span>
+        </div>
+      </a>
+
+      <!-- Desktop Anchor Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-charcoal-muted">
+        <a href="#problem-solution" class="hover:text-forest transition-colors py-1">Philosophy</a>
+        <a href="#features" class="hover:text-forest transition-colors py-1">AI Features</a>
+        <a href="#jeev-ai-sandbox" class="hover:text-forest transition-colors py-1 flex items-center gap-1.5 text-forest font-semibold">
+          <svg class="w-3.5 h-3.5 text-sage-deep animate-sparkle" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+          </svg>
+          <span>Try Jeev AI</span>
+        </a>
+        <a href="#how-it-works" class="hover:text-forest transition-colors py-1">How It Works</a>
+        <a href="#why-jeevify" class="hover:text-forest transition-colors py-1">Why Jeevify</a>
+      </nav>
+
+      <!-- Primary Header CTA & Mobile Menu Button -->
+      <div class="flex items-center gap-3">
+        <button type="button" onclick="openModal('quick-waitlist-modal', 'jeevify.in - Header CTA')" class="hidden sm:inline-flex items-center gap-2 bg-forest hover:bg-forest-hover text-alabaster text-sm font-medium px-5 py-2.5 rounded-full shadow-sm hover:shadow transition-all duration-200 active:scale-[0.98]">
+          <span>Join the Waitlist</span>
+          <svg class="w-4 h-4 text-sage-soft" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" type="button" class="md:hidden p-2.5 rounded-xl text-charcoal hover:bg-sand focus:outline-none" aria-label="Toggle Navigation">
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h12"/>
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Collapsible Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-stonewarm/60 bg-alabaster/95 backdrop-blur-lg px-4 pt-3 pb-6 space-y-2.5">
+      <a href="#problem-solution" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-charcoal hover:bg-sage-light/60">Philosophy</a>
+      <a href="#features" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-charcoal hover:bg-sage-light/60">AI Features</a>
+      <a href="#jeev-ai-sandbox" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-semibold text-forest bg-sage-light/50">✨ Try Jeev AI Demo</a>
+      <a href="#how-it-works" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-charcoal hover:bg-sage-light/60">How It Works</a>
+      <a href="#why-jeevify" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-base font-medium text-charcoal hover:bg-sage-light/60">Why Jeevify</a>
+      <div class="pt-2">
+        <a href="#waitlist" onclick="focusWaitlistInput(event)" class="mobile-nav-link w-full inline-flex justify-center items-center gap-2 bg-forest text-alabaster font-medium px-5 py-3 rounded-full shadow-sm">
+          <span>Join the Waitlist</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <section class="relative overflow-hidden pt-10 pb-20 sm:pt-16 sm:pb-28 lg:pt-20 lg:pb-32 bg-wellness-radial">
+      <!-- Ambient Decorative Organic Blobs -->
+      <div class="pointer-events-none absolute -top-24 -left-24 w-96 h-96 rounded-full bg-sage-light/80 blur-3xl animate-blob-1"></div>
+      <div class="pointer-events-none absolute top-1/3 right-0 w-[28rem] h-[28rem] rounded-full bg-sand/90 blur-3xl animate-blob-2"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+          
+          <!-- Left Column: Hero Copy & Actions -->
+          <div class="lg:col-span-7 text-center lg:text-left">
+            <!-- Subtle AI Pill Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sage-light/95 border border-sage-soft text-forest text-xs sm:text-sm font-medium mb-6 shadow-inner-calm">
+              <svg class="w-4 h-4 text-forest animate-sparkle" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+              </svg>
+              <span>Introducing Jeev AI • Mindful Intelligence</span>
+            </div>
+
+            <!-- Big Headline -->
+            <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-charcoal tracking-tight leading-[1.12] mb-6">
+              Live Better. <br class="hidden sm:inline" />
+              <span class="text-forest relative inline-block">
+                Every Day.
+                <svg class="absolute -bottom-2 left-0 w-full h-3 text-sage/50" viewBox="0 0 200 12" fill="none" preserveAspectRatio="none">
+                  <path d="M2 9.5C52 2.5 145 1.5 198 8.5" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="text-base sm:text-lg lg:text-xl text-charcoal-muted leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8 font-normal">
+              Jeevify helps you build healthy habits, stay focused, and take care of your mind and body — all in one place, gently guided by adaptive AI.
+            </p>
+
+            <!-- CTA Buttons Row -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6">
+              <button type="button" onclick="openModal('quick-waitlist-modal', 'jeevify.in - Hero Primary CTA')" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-forest hover:bg-forest-hover text-alabaster font-display font-semibold text-base px-8 py-4 rounded-full shadow-elevated hover:shadow-lg transition-all duration-200 active:scale-[0.99]">
+                <span>Get Early Access</span>
+                <svg class="w-5 h-5 text-sage-soft" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </button>
+
+              <a href="#jeev-ai-sandbox" onclick="openHeroAiTabOrScroll(event)" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/90 hover:bg-white text-forest font-display font-semibold text-base px-7 py-4 rounded-full border border-sage-soft shadow-sm hover:shadow transition-all duration-200">
+                <svg class="w-4 h-4 text-forest animate-sparkle" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+                </svg>
+                <span>Try Jeev AI Demo</span>
+              </a>
+            </div>
+
+            <!-- Inline Quick Hero Waitlist Bar (Wired to Google Sheets) -->
+            <form id="hero-inline-waitlist-form" onsubmit="submitWaitlistToSheets(event, 'hero-inline')" class="max-w-xl mx-auto lg:mx-0 mb-7 bg-white/90 backdrop-blur-md p-2 rounded-2xl border border-stonewarm shadow-soft">
+              <input type="hidden" name="source" value="jeevify.in - Hero Inline Form" />
+              <input type="hidden" name="intention" id="hero-inline-intention" value="Mindful Habits & Consistency" />
+              <div class="grid grid-cols-1 sm:grid-cols-12 gap-2">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="First name"
+                  aria-label="First name"
+                  class="sm:col-span-4 px-3.5 py-2.5 rounded-xl bg-alabaster/90 border border-stonewarm/70 text-charcoal placeholder-charcoal-subtle text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-forest focus:bg-white"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Enter your email for early access..."
+                  aria-label="Email address"
+                  class="sm:col-span-5 px-3.5 py-2.5 rounded-xl bg-alabaster/90 border border-stonewarm/70 text-charcoal placeholder-charcoal-subtle text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-forest focus:bg-white"
+                />
+                <button
+                  type="submit"
+                  id="hero-inline-submit-btn"
+                  class="sm:col-span-3 bg-forest hover:bg-forest-hover text-alabaster font-display font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition-all whitespace-nowrap shadow-sm"
+                >
+                  Join Waitlist
+                </button>
+              </div>
+              <p id="hero-inline-feedback" class="hidden text-xs font-medium mt-2 px-2 text-left"></p>
+            </form>
+
+            <!-- Secondary Text: App Store & Google Play Badge Info -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs sm:text-sm text-charcoal-subtle">
+              <div class="flex items-center gap-2 bg-sand/70 px-3.5 py-2 rounded-full border border-stonewarm/60">
+                <!-- Apple Icon -->
+                <svg class="w-4 h-4 text-charcoal" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.33c.64-.78 1.08-1.86.96-2.94-.93.04-2.06.62-2.72 1.4-.58.68-1.1 1.79-.96 2.84 1.04.08 2.08-.52 2.72-1.3z"/>
+                </svg>
+                <!-- Android / Google Play Icon -->
+                <svg class="w-4 h-4 text-forest" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/>
+                </svg>
+                <span class="font-medium text-charcoal-muted">Coming soon on iOS &amp; Android</span>
+              </div>
+              <span class="hidden sm:inline text-stonewarm">•</span>
+              <span class="text-charcoal-subtle">Powered by private, adaptive Jeev AI</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Mobile App Sanctuary + Live Jeev AI Tab -->
+          <div class="lg:col-span-5 flex justify-center">
+            <div id="interactive-phone-card" class="w-full max-w-md bg-white/95 rounded-[2.25rem] p-5 sm:p-6 border border-stonewarm ai-glow relative transition-all duration-500">
+              
+              <!-- Floating Interactive Tooltip Badge -->
+              <div class="-top-3.5 right-6 absolute bg-forest text-alabaster text-[11px] font-medium px-3 py-1 rounded-full shadow-sm flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-sage-soft animate-ping"></span>
+                <span>Live Interactive App + Jeev AI</span>
+              </div>
+
+              <!-- Phone Top Status Bar & Mode Switcher Tabs -->
+              <div class="flex items-center justify-between gap-2 pb-3.5 mb-4 border-b border-sand">
+                <div class="inline-flex p-1 rounded-xl bg-alabaster border border-stonewarm/80">
+                  <button type="button" id="tab-btn-sanctuary" onclick="switchPhoneTab('sanctuary')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-forest text-alabaster shadow-sm transition-all">
+                    Today's Sanctuary
+                  </button>
+                  <button type="button" id="tab-btn-ai" onclick="switchPhoneTab('ai')" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-forest hover:bg-sage-light/60 flex items-center gap-1 transition-all">
+                    <svg class="w-3.5 h-3.5 text-forest animate-sparkle" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+                    </svg>
+                    <span>Jeev AI Coach</span>
+                  </button>
+                </div>
+                <span class="bg-sage-light text-forest font-medium px-2.5 py-1 rounded-full text-[11px]" id="streak-badge">
+                  🌱 12 Day Flow
+                </span>
+              </div>
+
+              <!-- TAB 1: TODAY'S SANCTUARY VIEW -->
+              <div id="phone-tab-sanctuary" class="space-y-4">
+                <!-- Daily Wellness Ring + Summary -->
+                <div class="bg-alabaster rounded-2xl p-3.5 border border-sand flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3.5">
+                    <!-- Animated SVG Progress Ring -->
+                    <div class="relative w-14 h-14 flex-shrink-0">
+                      <svg class="w-14 h-14" viewBox="0 0 64 64">
+                        <circle cx="32" cy="32" r="26" stroke="#E6EFE8" stroke-width="6" fill="transparent"/>
+                        <circle id="wellness-ring" class="progress-ring-circle" cx="32" cy="32" r="26" stroke="#1E3F35" stroke-width="6" stroke-dasharray="163.36" stroke-dashoffset="40.84" stroke-linecap="round" fill="transparent"/>
+                      </svg>
+                      <div class="absolute inset-0 flex items-center justify-center">
+                        <span id="wellness-score-text" class="font-display font-bold text-xs text-forest">75%</span>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-1.5">
+                        <p class="text-[11px] uppercase tracking-wider text-charcoal-subtle font-medium">Daily Balance</p>
+                        <span class="text-[10px] bg-sage-light text-forest px-1.5 py-0.2 rounded font-medium">AI Paced</span>
+                      </div>
+                      <h2 id="wellness-status-title" class="font-display font-semibold text-sm sm:text-base text-charcoal">Grounded &amp; Focused</h2>
+                      <p id="wellness-status-sub" class="text-xs text-charcoal-muted">2 of 3 mindful rituals complete</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Live Jeev AI Micro-Insight Banner inside Sanctuary -->
+                <div class="bg-sage-light/65 border border-sage-soft/90 rounded-2xl p-3 flex items-start gap-2.5">
+                  <div class="w-6 h-6 rounded-lg bg-forest text-alabaster flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5 animate-sparkle" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+                    </svg>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="text-[11px] font-semibold text-forest uppercase tracking-wider">Jeev AI Adaptive Note</span>
+                      <button type="button" onclick="switchPhoneTab('ai')" class="text-[11px] font-semibold text-forest underline hover:text-forest-hover">Customize →</button>
+                    </div>
+                    <p id="sanctuary-ai-insight" class="text-xs text-charcoal-muted leading-snug mt-0.5">
+                      Your energy is steady today. Keep your evening reflection light (3 mins) to protect your sleep window.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Interactive Habit Check-offs -->
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-charcoal-subtle">Adaptive Daily Rituals</span>
+                    <span class="text-[11px] text-sage-deep font-medium">Tap to toggle</span>
+                  </div>
+
+                  <div class="space-y-2" id="habit-list">
+                    <!-- Habit 1: Morning Mindfulness -->
+                    <button type="button" onclick="toggleHabit(0)" class="habit-item w-full flex items-center justify-between p-2.5 rounded-xl border border-sage-soft/80 bg-sage-light/40 text-left transition-all duration-200 hover:bg-sage-light/70">
+                      <div class="flex items-center gap-3">
+                        <div class="habit-checkbox w-5 h-5 rounded-full bg-forest text-alabaster flex items-center justify-center transition-colors">
+                          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                          </svg>
+                        </div>
+                        <div>
+                          <p class="habit-title text-sm font-medium text-charcoal line-through opacity-75">Morning Mindfulness</p>
+                          <p class="habit-meta text-[11px] text-charcoal-subtle">10 mins breathwork • 7:30 AM</p>
+                        </div>
+                      </div>
+                      <span class="text-xs font-medium text-forest bg-white/80 px-2 py-0.5 rounded-md">+15%</span>
+                    </button>
+
+                    <!-- Habit 2: Hydrate & Sunlight Walk -->
+                    <button type="button" onclick="toggleHabit(1)" class="habit-item w-full flex items-center justify-between p-2.5 rounded-xl border border-sage-soft/80 bg-sage-light/40 text-left transition-all duration-200 hover:bg-sage-light/70">
+                      <div class="flex items-center gap-3">
+                        <div class="habit-checkbox w-5 h-5 rounded-full bg-forest text-alabaster flex items-center justify-center transition-colors">
+                          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                          </svg>
+                        </div>
+                        <div>
+                          <p class="habit-title text-sm font-medium text-charcoal line-through opacity-75">Hydrate &amp; Sunlight Walk</p>
+                          <p class="habit-meta text-[11px] text-charcoal-subtle">15 mins outdoor step • 8:15 AM</p>
+                        </div>
+                      </div>
+                      <span class="text-xs font-medium text-forest bg-white/80 px-2 py-0.5 rounded-md">+15%</span>
+                    </button>
+
+                    <!-- Habit 3: Evening Reflection (Can also be updated by Jeev AI!) -->
+                    <button type="button" onclick="toggleHabit(2)" class="habit-item w-full flex items-center justify-between p-2.5 rounded-xl border border-stonewarm bg-white text-left transition-all duration-200 hover:border-sage">
+                      <div class="flex items-center gap-3">
+                        <div class="habit-checkbox w-5 h-5 rounded-full border-2 border-sage text-transparent flex items-center justify-center transition-colors">
+                          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                          </svg>
+                        </div>
+                        <div>
+                          <p id="customizable-habit-title" class="habit-title text-sm font-medium text-charcoal">Evening Gratitude Journal</p>
+                          <p id="customizable-habit-meta" class="habit-meta text-[11px] text-charcoal-subtle">AI-scaled to 3 mins • 9:00 PM</p>
+                        </div>
+                      </div>
+                      <span class="text-xs font-medium text-charcoal-subtle bg-alabaster px-2 py-0.5 rounded-md">+25%</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 25-Min Focus Timer Preview -->
+                <div class="bg-forest text-alabaster rounded-2xl p-3.5 flex items-center justify-between shadow-sm">
+                  <div class="flex items-center gap-3">
+                    <button id="focus-timer-btn" type="button" onclick="toggleFocusTimer()" class="w-9 h-9 rounded-xl bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors focus:outline-none" aria-label="Toggle Focus Timer">
+                      <!-- Play Icon -->
+                      <svg id="timer-play-icon" class="w-4 h-4 text-sage-light translate-x-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                      </svg>
+                      <!-- Pause Icon -->
+                      <svg id="timer-pause-icon" class="w-4 h-4 text-sage-light hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M5.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75A.75.75 0 007.25 3h-1.5zM12.75 3a.75.75 0 00-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 00.75-.75V3.75a.75.75 0 00-.75-.75h-1.5z"/>
+                      </svg>
+                    </button>
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-xs uppercase tracking-wider text-sage-soft font-medium">AI Focus Block</span>
+                        <span id="ambient-sound-pill" class="text-[10px] bg-white/10 px-2 py-0.5 rounded-full text-alabaster/90">🌧️ Monsoon Rain</span>
+                      </div>
+                      <p id="focus-timer-status" class="text-[11px] text-alabaster/80 mt-0.5">Matched to your peak focus window</p>
+                    </div>
+                  </div>
+                  <div id="focus-timer-display" class="font-display font-bold text-lg tracking-tight text-sage-light tabular-nums">
+                    25:00
+                  </div>
+                </div>
+
+                <!-- Mood Check-in Pills (Triggers Adaptive AI Insight) -->
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-charcoal-subtle">Log Energy for Jeev AI</span>
+                    <span id="mood-feedback" class="text-[11px] text-forest font-medium">Feeling Calm ✨</span>
+                  </div>
+                  <div class="grid grid-cols-4 gap-2">
+                    <button type="button" onclick="selectMood(this, 'Feeling Calm ✨', 'Calm')" class="mood-pill py-2 px-2 rounded-xl text-xs font-medium bg-forest text-alabaster border border-forest transition-all">
+                      🌿 Calm
+                    </button>
+                    <button type="button" onclick="selectMood(this, 'Deeply Focused 🎯', 'Focused')" class="mood-pill py-2 px-2 rounded-xl text-xs font-medium bg-alabaster text-charcoal-muted border border-stonewarm hover:border-sage transition-all">
+                      ✨ Focused
+                    </button>
+                    <button type="button" onclick="selectMood(this, 'Energized & Ready ☀️', 'Radiant')" class="mood-pill py-2 px-2 rounded-xl text-xs font-medium bg-alabaster text-charcoal-muted border border-stonewarm hover:border-sage transition-all">
+                      ☀️ Radiant
+                    </button>
+                    <button type="button" onclick="selectMood(this, 'Gentle Rest Mode 🌙', 'Low Energy')" class="mood-pill py-2 px-2 rounded-xl text-xs font-medium bg-alabaster text-charcoal-muted border border-stonewarm hover:border-sage transition-all">
+                      🌙 Low
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 2: LIVE JEEV AI DAILY INSIGHT & ROUTINE GENERATOR -->
+              <div id="phone-tab-ai" class="hidden space-y-4">
+                <div class="bg-sage-light/50 border border-sage-soft rounded-2xl p-4">
+                  <div class="flex items-center gap-2 mb-1.5">
+                    <span class="w-6 h-6 rounded-lg bg-forest text-alabaster flex items-center justify-center">
+                      <svg class="w-3.5 h-3.5 animate-sparkle" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+                      </svg>
+                    </span>
+                    <h3 class="font-display font-bold text-sm text-charcoal">Jeev AI Micro-Routine Generator</h3>
+                  </div>
+                  <p class="text-xs text-charcoal-muted leading-relaxed">
+                    Tell Jeev AI how you feel or what you want to achieve right now, and watch it adapt your daily sanctuary.
+                  </p>
+                </div>
+
+                <!-- Quick State Selector Chips -->
+                <div>
+                  <label class="block text-[11px] font-semibold uppercase tracking-wider text-charcoal-subtle mb-2">
+                    1. Pick Current Energy or Intention
+                  </label>
+                  <div class="flex flex-wrap gap-1.5">
+                    <button type="button" onclick="setHeroAiPreset('Feeling overwhelmed with tasks, need a calm 15-min reset')" class="text-[11px] bg-alabaster hover:bg-sage-light text-charcoal-muted hover:text-forest px-2.5 py-1.5 rounded-lg border border-stonewarm transition-colors">
+                      🌿 Overwhelmed → Calm Reset
+                    </button>
+                    <button type="button" onclick="setHeroAiPreset('Afternoon slump, need gentle focus without caffeine')" class="text-[11px] bg-alabaster hover:bg-sage-light text-charcoal-muted hover:text-forest px-2.5 py-1.5 rounded-lg border border-stonewarm transition-colors">
+                      ☀️ Beat Afternoon Slump
+                    </button>
+                    <button type="button" onclick="setHeroAiPreset('Unwind my racing mind before bed tonight')" class="text-[11px] bg-alabaster hover:bg-sage-light text-charcoal-muted hover:text-forest px-2.5 py-1.5 rounded-lg border border-stonewarm transition-colors">
+                      🌙 Better Sleep Wind-down
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Custom Input -->
+                <div>
+                  <label for="hero-ai-input" class="block text-[11px] font-semibold uppercase tracking-wider text-charcoal-subtle mb-1.5">
+                    2. Or Type Your Own Goal
+                  </label>
+                  <div class="flex gap-2">
+                    <input
+                      id="hero-ai-input"
+                      type="text"
+                      value="Feeling overwhelmed with tasks, need a calm 15-min reset"
+                      placeholder="e.g., Stay focused for 45 mins without stress..."
+                      class="flex-1 text-xs bg-alabaster border border-stonewarm rounded-xl px-3 py-2.5 text-charcoal focus:outline-none focus:ring-2 focus:ring-forest"
+                    />
+                    <button
+                      type="button"
+                      id="hero-ai-submit-btn"
+                      onclick="generateHeroMicroRoutine()"
+                      class="bg-forest hover:bg-forest-hover text-alabaster text-xs font-semibold px-3.5 py-2.5 rounded-xl flex items-center gap-1.5 shrink-0 shadow-sm transition-all"
+                    >
+                      <span>Adapt</span>
+                      <svg class="w-3.5 h-3.5 text-sage-soft" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Generated AI Result Box inside Phone -->
+                <div id="hero-ai-result-box" class="bg-alabaster rounded-2xl p-3.5 border border-stonewarm space-y-2.5">
+                  <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-semibold uppercase tracking-wider text-forest bg-sage-light px-2 py-0.5 rounded-md">
+                      Personalized by Gemini
+                    </span>
+                    <span id="hero-ai-duration" class="text-[11px] font-medium text-charcoal-subtle">10 mins • Gentle</span>
+                  </div>
+                  <h4 id="hero-ai-ritual-title" class="font-display font-bold text-sm text-charcoal">
+                    Box Breathing &amp; Single-Priority Clear
+                  </h4>
+                  <p id="hero-ai-ritual-desc" class="text-xs text-charcoal-muted leading-relaxed">
+                    Close open tabs, take 4 slow box breaths, and write down just one gentle task for the next 20 minutes.
+                  </p>
+                  <div class="pt-2 border-t border-sand flex items-center justify-between">
+                    <span id="hero-ai-journal-prompt" class="text-[11px] italic text-charcoal-subtle truncate max-w-[65%]">
+                      "What can I let go of today?"
+                    </span>
+                    <button
+                      type="button"
+                      onclick="applyHeroAiRitualToSanctuary()"
+                      class="text-xs font-semibold text-forest hover:text-forest-hover flex items-center gap-1 bg-sage-light/80 px-2.5 py-1 rounded-lg transition-colors"
+                    >
+                      <span>+ Add to Today</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. PROBLEM + SOLUTION SECTION ==================== -->
+    <section id="problem-solution" class="py-20 sm:py-28 bg-sand/60 border-y border-stonewarm/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="text-xs font-semibold uppercase tracking-widest text-sage-deep bg-sage-light px-3.5 py-1.5 rounded-full">
+            From Rigid Rules to Adaptive Flow
+          </span>
+          <h2 class="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight mt-4 mb-4">
+            Why rigid habit trackers fail when real life happens
+          </h2>
+          <p class="text-base sm:text-lg text-charcoal-muted leading-relaxed">
+            Most productivity apps assume you have the exact same energy every single day. When life gets unpredictable, rigid checklists and broken streaks trigger guilt and burnout. Jeevify's adaptive AI learns your personal rhythm and adjusts with compassion.
+          </p>
+        </div>
+
+        <!-- Split Comparison Cards: The Fragmented Routine vs. The Jeevify AI Way -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+          
+          <!-- Left Card: The Rigid & Fragmented Routine (Problem) -->
+          <div class="bg-alabaster/90 rounded-3xl p-8 sm:p-10 border border-stonewarm flex flex-col justify-between relative overflow-hidden">
+            <div>
+              <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-charcoal-subtle bg-stonewarm/60 px-3 py-1 rounded-full mb-6">
+                <span class="w-2 h-2 rounded-full bg-amber-600/70"></span>
+                <span>Static &amp; Disconnected Apps</span>
+              </div>
+              <h3 class="font-display font-bold text-2xl text-charcoal mb-3">
+                Rigid checklists that punish you for being human
+              </h3>
+              <p class="text-charcoal-muted text-sm sm:text-base leading-relaxed mb-8">
+                Traditional trackers force you to manually juggle 5 separate apps—and the moment you have a poor night's sleep or a busy workday, your streaks break and your to-do list piles up into an overwhelming wall of overdue tasks.
+              </p>
+
+              <!-- Cluttered Visual Representation -->
+              <div class="space-y-3 mb-6">
+                <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-stonewarm/80 text-sm text-charcoal-muted">
+                  <span class="w-7 h-7 rounded-lg bg-red-50 text-red-700 flex items-center justify-center font-bold text-xs">✕</span>
+                  <span>Static daily goals that ignore your sleep quality and mental bandwidth</span>
+                </div>
+                <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-stonewarm/80 text-sm text-charcoal-muted">
+                  <span class="w-7 h-7 rounded-lg bg-red-50 text-red-700 flex items-center justify-center font-bold text-xs">✕</span>
+                  <span>All-or-nothing streak counters that cause you to quit after one hard day</span>
+                </div>
+                <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-stonewarm/80 text-sm text-charcoal-muted">
+                  <span class="w-7 h-7 rounded-lg bg-red-50 text-red-700 flex items-center justify-center font-bold text-xs">✕</span>
+                  <span>Zero connection between your mood check-ins and your daily workload</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-stonewarm/60 flex items-center justify-between text-xs text-charcoal-subtle">
+              <span>Result: Guilt, decision fatigue &amp; abandoned habits</span>
+              <span class="font-medium">Rigid &amp; Noisy</span>
+            </div>
+          </div>
+
+          <!-- Right Card: The Jeevify Adaptive AI Way (Solution) -->
+          <div class="bg-forest text-alabaster rounded-3xl p-8 sm:p-10 shadow-elevated flex flex-col justify-between relative overflow-hidden">
+            <!-- Soft radial glow inside card -->
+            <div class="pointer-events-none absolute -right-16 -bottom-16 w-72 h-72 rounded-full bg-sage/20 blur-2xl"></div>
+
+            <div class="relative z-10">
+              <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-forest bg-sage-light px-3 py-1 rounded-full mb-6">
+                <svg class="w-3.5 h-3.5 text-forest animate-sparkle" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+                </svg>
+                <span>The Jeevify Adaptive AI Way</span>
+              </div>
+              <h3 class="font-display font-bold text-2xl text-white mb-3">
+                Gentle intelligence that scales with your daily energy
+              </h3>
+              <p class="text-sage-light/90 text-sm sm:text-base leading-relaxed mb-8">
+                Jeev AI quietly understands your sleep, mood, and focus patterns—automatically scaling a 30-minute workout down to a 5-minute mindful stretch on low-energy days so you keep your momentum without burning out.
+              </p>
+
+              <!-- Unified Visual Representation -->
+              <div class="space-y-3 mb-6">
+                <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-white/10 border border-white/15 text-sm text-alabaster">
+                  <span class="w-7 h-7 rounded-lg bg-sage-light text-forest flex items-center justify-center font-bold text-xs">✓</span>
+                  <span>Dynamic habit pacing that adjusts targets based on your daily capacity</span>
+                </div>
+                <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-white/10 border border-white/15 text-sm text-alabaster">
+                  <span class="w-7 h-7 rounded-lg bg-sage-light text-forest flex items-center justify-center font-bold text-xs">✓</span>
+                  <span>Smart focus scheduling aligned with your natural biological peak hours</span>
+                </div>
+                <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-white/10 border border-white/15 text-sm text-alabaster">
+                  <span class="w-7 h-7 rounded-lg bg-sage-light text-forest flex items-center justify-center font-bold text-xs">✓</span>
+                  <span>Proactive AI burnout prevention that suggests restorative breaks early</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative z-10 pt-4 border-t border-white/15 flex items-center justify-between text-xs text-sage-soft">
+              <span>Result: Effortless consistency &amp; lasting inner calm</span>
+              <span class="font-semibold text-white">✨ Adaptive &amp; Humane</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. KEY FEATURES SECTION (4 AI-POWERED CARDS) ==================== -->
+    <section id="features" class="py-20 sm:py-28 bg-alabaster">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Heading -->
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="text-xs font-semibold uppercase tracking-widest text-forest bg-sage-light px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-forest" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+            </svg>
+            <span>Mindful Intelligence Built In</span>
+          </span>
+          <h2 class="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight mt-4 mb-4">
+            Four AI-powered pillars for a calmer, more intentional day
+          </h2>
+          <p class="text-base sm:text-lg text-charcoal-muted leading-relaxed">
+            Every feature in Jeevify is enhanced by quiet, respectful AI that removes friction from your daily planning and helps you stay consistent without stress.
+          </p>
+        </div>
+
+        <!-- 4 Premium AI Feature Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          
+          <!-- Feature Card 1: Adaptive AI Habit Tracking -->
+          <div class="group bg-white rounded-3xl p-8 border border-stonewarm/90 shadow-soft hover:shadow-elevated hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="w-14 h-14 rounded-2xl bg-sage-light text-forest flex items-center justify-center group-hover:bg-forest group-hover:text-alabaster transition-colors duration-300">
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <span class="inline-flex items-center gap-1 text-xs font-semibold text-forest bg-sage-light/80 border border-sage-soft px-3 py-1 rounded-full">
+                  <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/></svg>
+                  <span>Auto-Scaling Goals</span>
+                </span>
+              </div>
+              <h3 class="font-display font-bold text-xl sm:text-2xl text-charcoal mb-2.5">
+                Adaptive AI Habit Tracking
+              </h3>
+              <p class="text-charcoal-muted text-sm sm:text-base leading-relaxed mb-6">
+                Dynamically scales habit goals up or down based on your consistency, sleep, and daily capacity so you never break your momentum—turning a 20-page reading goal into 2 mindful pages on exhausting days.
+              </p>
+            </div>
+            <!-- Mini visual preview bar -->
+            <div class="bg-alabaster rounded-2xl p-3.5 border border-sand flex items-center justify-between text-xs">
+              <span class="font-medium text-charcoal-muted">Low-Energy Day Detected</span>
+              <span class="text-forest font-semibold bg-sage-light px-2.5 py-1 rounded-lg">20 mins → 5 mins Micro-Habit ✓</span>
+            </div>
+          </div>
+
+          <!-- Feature Card 2: Smart Daily Wellness Check-ins -->
+          <div class="group bg-white rounded-3xl p-8 border border-stonewarm/90 shadow-soft hover:shadow-elevated hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="w-14 h-14 rounded-2xl bg-sage-light text-forest flex items-center justify-center group-hover:bg-forest group-hover:text-alabaster transition-colors duration-300">
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                  </svg>
+                </div>
+                <span class="inline-flex items-center gap-1 text-xs font-semibold text-forest bg-sage-light/80 border border-sage-soft px-3 py-1 rounded-full">
+                  <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/></svg>
+                  <span>Pattern Recognition</span>
+                </span>
+              </div>
+              <h3 class="font-display font-bold text-xl sm:text-2xl text-charcoal mb-2.5">
+                Smart Daily Wellness Check-ins
+              </h3>
+              <p class="text-charcoal-muted text-sm sm:text-base leading-relaxed mb-6">
+                Quick mood and energy check-ins that use AI pattern recognition to spot stress triggers early, uncover how habits affect your sleep, and suggest restorative breaks before burnout hits.
+              </p>
+            </div>
+            <!-- Mini visual preview bar -->
+            <div class="bg-alabaster rounded-2xl p-3.5 border border-sand flex items-center justify-between text-xs">
+              <span class="text-charcoal-muted">AI Pattern Insight:</span>
+              <span class="text-forest font-semibold">+28% afternoon focus after 10m morning walk</span>
+            </div>
+          </div>
+
+          <!-- Feature Card 3: AI Focus & Flow Scheduling -->
+          <div class="group bg-white rounded-3xl p-8 border border-stonewarm/90 shadow-soft hover:shadow-elevated hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="w-14 h-14 rounded-2xl bg-sage-light text-forest flex items-center justify-center group-hover:bg-forest group-hover:text-alabaster transition-colors duration-300">
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <span class="inline-flex items-center gap-1 text-xs font-semibold text-forest bg-sage-light/80 border border-sage-soft px-3 py-1 rounded-full">
+                  <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/></svg>
+                  <span>Chronotype Sync</span>
+                </span>
+              </div>
+              <h3 class="font-display font-bold text-xl sm:text-2xl text-charcoal mb-2.5">
+                AI Focus &amp; Flow Scheduling
+              </h3>
+              <p class="text-charcoal-muted text-sm sm:text-base leading-relaxed mb-6">
+                Organizes your top tasks into calm deep-work blocks aligned with your natural peak energy hours, pairing each session with adaptive Pomodoro intervals and soothing nature soundscapes.
+              </p>
+            </div>
+            <!-- Mini visual preview bar -->
+            <div class="bg-alabaster rounded-2xl p-3.5 border border-sand flex items-center justify-between text-xs">
+              <span class="text-charcoal-muted font-medium">Peak Energy Window</span>
+              <span class="px-2.5 py-1 rounded-lg bg-sage-light text-forest font-semibold">9:30 AM – 11:30 AM • Deep Work</span>
+            </div>
+          </div>
+
+          <!-- Feature Card 4: AI-Guided Journaling & Mindful Routines -->
+          <div class="group bg-white rounded-3xl p-8 border border-stonewarm/90 shadow-soft hover:shadow-elevated hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="w-14 h-14 rounded-2xl bg-sage-light text-forest flex items-center justify-center group-hover:bg-forest group-hover:text-alabaster transition-colors duration-300">
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                  </svg>
+                </div>
+                <span class="inline-flex items-center gap-1 text-xs font-semibold text-forest bg-sage-light/80 border border-sage-soft px-3 py-1 rounded-full">
+                  <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/></svg>
+                  <span>Context-Aware Prompts</span>
+                </span>
+              </div>
+              <h3 class="font-display font-bold text-xl sm:text-2xl text-charcoal mb-2.5">
+                AI-Guided Journaling &amp; Mindful Routines
+              </h3>
+              <p class="text-charcoal-muted text-sm sm:text-base leading-relaxed mb-6">
+                Never stare at a blank page. Receive context-aware journaling prompts, empathetic reflections, and custom evening wind-down routines tailored to how your day actually unfolded.
+              </p>
+            </div>
+            <!-- Mini visual preview bar -->
+            <div class="bg-alabaster rounded-2xl p-3.5 border border-sand flex items-center justify-between text-xs">
+              <span class="italic text-charcoal-muted truncate">"You navigated a busy afternoon—what helped you stay grounded?"</span>
+              <span class="text-forest font-semibold shrink-0 ml-2">AI Prompt →</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== INTERACTIVE "EXPERIENCE JEEV AI" SANDBOX ==================== -->
+    <section id="jeev-ai-sandbox" class="py-20 sm:py-28 bg-wellness-radial border-t border-stonewarm/60 relative overflow-hidden">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Section Heading -->
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forest text-alabaster text-xs font-semibold uppercase tracking-widest mb-4 shadow-sm">
+            <svg class="w-3.5 h-3.5 text-sage-soft animate-sparkle" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+            </svg>
+            <span>Interactive Live Demo • Powered by Gemini</span>
+          </div>
+          <h2 class="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight mb-4">
+            Experience Jeev AI: Build Your Adaptive Daily Blueprint
+          </h2>
+          <p class="text-base sm:text-lg text-charcoal-muted leading-relaxed">
+            Pick an intention below or describe a personal goal. Jeev AI will craft a calm, realistic 3-part daily blueprint—complete with how it automatically scales down on your low-energy days.
+          </p>
+        </div>
+
+        <!-- Sandbox Card -->
+        <div class="bg-white/95 rounded-[2.25rem] p-6 sm:p-10 lg:p-12 border border-stonewarm ai-glow">
+          
+          <!-- Preset Goal Chips -->
+          <div class="mb-6">
+            <span class="block text-xs font-semibold uppercase tracking-wider text-charcoal-subtle mb-3">
+              Try a popular intention or write your own:
+            </span>
+            <div class="flex flex-wrap gap-2">
+              <button type="button" onclick="selectSandboxPreset('Wake up earlier without feeling exhausted')" class="sandbox-chip text-xs sm:text-sm font-medium px-4 py-2 rounded-full bg-sage-light text-forest border border-sage-soft hover:bg-forest hover:text-alabaster transition-all">
+                ☀️ Wake up earlier without feeling exhausted
+              </button>
+              <button type="button" onclick="selectSandboxPreset('Balance deep coding work with evening workouts')" class="sandbox-chip text-xs sm:text-sm font-medium px-4 py-2 rounded-full bg-alabaster text-charcoal-muted border border-stonewarm hover:border-sage transition-all">
+                💻 Balance deep coding work with evening workouts
+              </button>
+              <button type="button" onclick="selectSandboxPreset('Reduce afternoon screen fatigue and mental clutter')" class="sandbox-chip text-xs sm:text-sm font-medium px-4 py-2 rounded-full bg-alabaster text-charcoal-muted border border-stonewarm hover:border-sage transition-all">
+                🌿 Reduce afternoon screen fatigue
+              </button>
+              <button type="button" onclick="selectSandboxPreset('Build a consistent reading & mindfulness ritual')" class="sandbox-chip text-xs sm:text-sm font-medium px-4 py-2 rounded-full bg-alabaster text-charcoal-muted border border-stonewarm hover:border-sage transition-all">
+                📖 Build a daily reading &amp; mindfulness ritual
+              </button>
+            </div>
+          </div>
+
+          <!-- Input & Energy Selector Bar -->
+          <form onsubmit="handleBlueprintGenerate(event)" class="grid grid-cols-1 lg:grid-cols-12 gap-3 mb-8">
+            <div class="lg:col-span-6">
+              <label for="sandbox-goal-input" class="sr-only">Your personal goal</label>
+              <input
+                id="sandbox-goal-input"
+                type="text"
+                value="Wake up earlier without feeling exhausted"
+                placeholder="Describe a habit, wellness goal, or daily struggle..."
+                class="w-full px-4 py-3.5 rounded-2xl bg-alabaster border border-stonewarm text-charcoal text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-forest focus:bg-white transition-all"
+              />
+            </div>
+            <div class="lg:col-span-3">
+              <label for="sandbox-energy-select" class="sr-only">Current Energy Rhythm</label>
+              <select
+                id="sandbox-energy-select"
+                class="w-full px-4 py-3.5 rounded-2xl bg-alabaster border border-stonewarm text-charcoal text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-forest transition-all"
+              >
+                <option value="Balanced & Steady">🌿 Energy: Balanced</option>
+                <option value="Low Energy / Recovering from Burnout">🌙 Energy: Low / Tired</option>
+                <option value="High Motivation & Peak Flow">☀️ Energy: High Flow</option>
+              </select>
+            </div>
+            <div class="lg:col-span-3">
+              <button
+                type="submit"
+                id="sandbox-generate-btn"
+                class="w-full h-full min-h-[50px] bg-forest hover:bg-forest-hover text-alabaster font-display font-semibold text-sm sm:text-base px-6 py-3.5 rounded-2xl shadow-md hover:shadow-lg flex items-center justify-center gap-2 transition-all active:scale-[0.99]"
+              >
+                <svg id="sandbox-btn-sparkle" class="w-4 h-4 text-sage-soft animate-sparkle" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+                </svg>
+                <span id="sandbox-btn-text">Generate AI Blueprint</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Loading Skeleton (Hidden by default) -->
+          <div id="sandbox-loading" class="hidden py-10 text-center space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-sage-light text-forest flex items-center justify-center mx-auto animate-pulse">
+              <svg class="w-6 h-6 animate-spin" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+              </svg>
+            </div>
+            <p class="font-display font-semibold text-base text-forest">Jeev AI is crafting your mindful daily flow...</p>
+            <p class="text-xs text-charcoal-subtle">Aligning habits, peak focus blocks, and restorative wind-downs</p>
+          </div>
+
+          <!-- 3-Part Daily Blueprint Output Cards -->
+          <div id="sandbox-results">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
+              
+              <!-- Morning Anchor Card -->
+              <div class="bg-alabaster rounded-2xl p-5 border border-stonewarm flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-forest bg-sage-light px-2.5 py-1 rounded-full">
+                      ☀️ Morning Anchor
+                    </span>
+                    <span id="bp-morning-duration" class="text-xs font-medium text-charcoal-subtle">10 mins</span>
+                  </div>
+                  <h3 id="bp-morning-title" class="font-display font-bold text-lg text-charcoal mb-2">
+                    Sunlight &amp; Hydration First
+                  </h3>
+                  <p id="bp-morning-desc" class="text-xs sm:text-sm text-charcoal-muted leading-relaxed">
+                    Step onto a balcony or near a window with a warm glass of water before touching your phone to naturally reset your cortisol rhythm.
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-stonewarm/60 flex items-center justify-between text-[11px] text-sage-deep font-medium">
+                  <span>Circadian Alignment</span>
+                  <span>Gentle Start</span>
+                </div>
+              </div>
+
+              <!-- Midday Focus Card -->
+              <div class="bg-alabaster rounded-2xl p-5 border border-stonewarm flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-forest bg-sage-light px-2.5 py-1 rounded-full">
+                      🎯 Midday Focus
+                    </span>
+                    <span id="bp-midday-duration" class="text-xs font-medium text-charcoal-subtle">45 mins</span>
+                  </div>
+                  <h3 id="bp-midday-title" class="font-display font-bold text-lg text-charcoal mb-2">
+                    Single-Task Deep Flow Block
+                  </h3>
+                  <p id="bp-midday-desc" class="text-xs sm:text-sm text-charcoal-muted leading-relaxed">
+                    Complete your #1 priority during your mid-morning peak energy window, followed by a 5-minute eyes-closed breathing pause.
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-stonewarm/60 flex items-center justify-between text-[11px] text-sage-deep font-medium">
+                  <span>AI Chronotype Match</span>
+                  <span>Zero Distraction</span>
+                </div>
+              </div>
+
+              <!-- Evening Restore Card -->
+              <div class="bg-alabaster rounded-2xl p-5 border border-stonewarm flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-forest bg-sage-light px-2.5 py-1 rounded-full">
+                      🌙 Evening Restore
+                    </span>
+                    <span id="bp-evening-duration" class="text-xs font-medium text-charcoal-subtle">15 mins</span>
+                  </div>
+                  <h3 id="bp-evening-title" class="font-display font-bold text-lg text-charcoal mb-2">
+                    Warm Dimming &amp; Brain Dump
+                  </h3>
+                  <p id="bp-evening-desc" class="text-xs sm:text-sm text-charcoal-muted leading-relaxed">
+                    Dim overhead lights 45 minutes before sleep and jot down 3 lingering thoughts in Jeevify so your mind doesn't race in bed.
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-stonewarm/60 flex items-center justify-between text-[11px] text-sage-deep font-medium">
+                  <span>Restorative Wind-down</span>
+                  <span>Deep Sleep Prep</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Adaptive AI Pacing Note Banner -->
+            <div class="bg-forest text-alabaster rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-xl bg-white/15 text-sage-light flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 animate-sparkle" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <span class="text-[11px] font-semibold uppercase tracking-wider text-sage-soft">How Jeev AI Adapts on Low-Energy Days</span>
+                  <p id="bp-adaptive-note" class="text-xs sm:text-sm text-white/95 leading-relaxed mt-0.5">
+                    If you log under 6 hours of sleep, Jeev AI automatically scales your Morning Anchor to 2 minutes of deep breathing in bed and shifts heavy focus blocks to lighter tasks.
+                  </p>
+                </div>
+              </div>
+              <button type="button" onclick="saveBlueprintAndPrefillWaitlist()" class="shrink-0 inline-flex items-center gap-2 text-xs sm:text-sm font-semibold bg-sage-light hover:bg-white text-forest px-4 py-3 rounded-xl transition-all shadow-sm active:scale-[0.98]">
+                <svg class="w-4 h-4 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Save Blueprint &amp; Join Waitlist with this Intention</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. HOW IT WORKS SECTION (3-STEP AI-ASSISTED FLOW) ==================== -->
+    <section id="how-it-works" class="py-20 sm:py-28 bg-sand/50 border-t border-stonewarm/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
+          <span class="text-xs font-semibold uppercase tracking-widest text-forest bg-sage-light px-3.5 py-1.5 rounded-full">
+            Simple 3-Step AI-Assisted Flow
+          </span>
+          <h2 class="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight mt-4 mb-4">
+            How Jeevify adapts to your life in three simple steps
+          </h2>
+          <p class="text-base sm:text-lg text-charcoal-muted leading-relaxed">
+            No complex spreadsheets or rigid templates to maintain. Jeev AI handles the planning so you can focus on living.
+          </p>
+        </div>
+
+        <!-- 3-Step Connected Flow -->
+        <div class="relative grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          
+          <!-- Connecting Horizontal Line (Desktop only) -->
+          <div class="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-sage-soft via-forest/40 to-sage-soft z-0"></div>
+
+          <!-- Step 01 -->
+          <div class="relative z-10 bg-alabaster rounded-3xl p-8 border border-stonewarm shadow-soft text-center flex flex-col items-center">
+            <div class="w-16 h-16 rounded-2xl bg-forest text-alabaster font-display font-bold text-lg flex items-center justify-center shadow-md mb-6 border-4 border-alabaster">
+              01
+            </div>
+            <h3 class="font-display font-bold text-xl text-charcoal mb-3">
+              Set your goals &amp; rhythm
+            </h3>
+            <p class="text-charcoal-muted text-sm sm:text-base leading-relaxed">
+              Tell Jeev AI what matters to you—whether it's deeper focus, better sleep, or mindful habits—and how your typical days unfold.
+            </p>
+          </div>
+
+          <!-- Step 02 -->
+          <div class="relative z-10 bg-alabaster rounded-3xl p-8 border border-stonewarm shadow-soft text-center flex flex-col items-center">
+            <div class="w-16 h-16 rounded-2xl bg-forest text-alabaster font-display font-bold text-lg flex items-center justify-center shadow-md mb-6 border-4 border-alabaster">
+              02
+            </div>
+            <h3 class="font-display font-bold text-xl text-charcoal mb-3">
+              Follow your adaptive daily flow
+            </h3>
+            <p class="text-charcoal-muted text-sm sm:text-base leading-relaxed">
+              Get gentle, bite-sized habits and distraction-free focus blocks tailored in real time to your sleep, mood, and daily energy.
+            </p>
+          </div>
+
+          <!-- Step 03 -->
+          <div class="relative z-10 bg-alabaster rounded-3xl p-8 border border-stonewarm shadow-soft text-center flex flex-col items-center">
+            <div class="w-16 h-16 rounded-2xl bg-forest text-alabaster font-display font-bold text-lg flex items-center justify-center shadow-md mb-6 border-4 border-alabaster">
+              03
+            </div>
+            <h3 class="font-display font-bold text-xl text-charcoal mb-3">
+              Track progress &amp; evolve effortlessly
+            </h3>
+            <p class="text-charcoal-muted text-sm sm:text-base leading-relaxed">
+              Weekly AI insights celebrate your quiet wins, uncover what gives you energy, and recalibrate your routine automatically.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. WHY JEEVIFY SECTION (HUMANE AI PHILOSOPHY) ==================== -->
+    <section id="why-jeevify" class="py-20 sm:py-28 bg-alabaster relative overflow-hidden">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="relative rounded-[2.5rem] bg-forest text-alabaster p-8 sm:p-14 lg:p-20 overflow-hidden shadow-elevated">
+          
+          <!-- Subtle Large Devanagari Watermark in Background -->
+          <div class="pointer-events-none select-none absolute -right-6 -bottom-10 font-devanagari text-[11rem] sm:text-[16rem] leading-none text-white/[0.04] font-semibold">
+            जीव
+          </div>
+
+          <!-- Soft Decorative Leaf Circle SVG in Corner -->
+          <div class="pointer-events-none absolute -top-24 -left-24 w-80 h-80 rounded-full bg-sage/15 blur-3xl"></div>
+
+          <div class="relative z-10 max-w-3xl">
+            <!-- Devanagari + Humane AI Badge -->
+            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm mb-8">
+              <span class="font-devanagari text-lg text-sage-light font-semibold">जीव</span>
+              <span class="text-xs sm:text-sm uppercase tracking-widest text-sage-soft font-medium">(Jeev) • Meaning "Life" &amp; Humane AI</span>
+            </div>
+
+            <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-tight mb-6">
+              AI that grounds you in real life, rather than keeping you glued to a screen.
+            </h2>
+
+            <p class="text-sage-light/90 text-base sm:text-lg lg:text-xl leading-relaxed mb-6 font-normal">
+              Rooted in the Sanskrit and Hindi word <strong class="text-white font-semibold">“Jeev” (जीव)</strong>, meaning <em>life</em>, Jeevify is built on our philosophy of <strong class="text-white font-semibold">Humane AI</strong>: intelligence that respects your biological limits, protects your attention, and honours your humanity.
+            </p>
+
+            <p class="text-sage-soft/90 text-base sm:text-lg leading-relaxed mb-10">
+              Instead of bombarding you with endless notifications or chat threads, Jeev AI works quietly in the background—simplifying decisions so you can step away from your phone and live more intentionally every day.
+            </p>
+
+            <!-- Core Pillars Strip -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-white/15">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-sage/25 text-sage-light flex items-center justify-center text-sm">🌿</span>
+                <span class="text-sm font-medium text-white">Adaptive &amp; Guilt-Free</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-sage/25 text-sage-light flex items-center justify-center text-sm">🔒</span>
+                <span class="text-sm font-medium text-white">Private by Design</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-sage/25 text-sage-light flex items-center justify-center text-sm">✨</span>
+                <span class="text-sm font-medium text-white">Humane Intelligence</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. WAITLIST / EMAIL SIGNUP SECTION ==================== -->
+    <section id="waitlist" class="py-20 sm:py-28 bg-wellness-radial border-t border-stonewarm/60">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="bg-white rounded-[2.5rem] p-8 sm:p-12 lg:p-16 border border-stonewarm shadow-elevated text-center relative overflow-hidden">
+          
+          <!-- Top Small Emblem -->
+          <div class="w-12 h-12 rounded-2xl bg-sage-light text-forest flex items-center justify-center mx-auto mb-6">
+            <svg class="w-6 h-6" viewBox="0 0 32 32" fill="none">
+              <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2" stroke-dasharray="56 18" stroke-linecap="round"/>
+              <path d="M16 23C16 23 23 19.5 23 12.5C23 10.5 22 9 20 9C15.5 9 12 13.5 12 18.5C12 20.5 13.5 22.5 16 23Z" fill="#7C9A82" fill-opacity="0.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <span class="text-xs font-semibold uppercase tracking-widest text-forest bg-sage-light px-3.5 py-1.5 rounded-full">
+            Early Access Waitlist
+          </span>
+
+          <h2 class="font-display font-bold text-3xl sm:text-4xl text-charcoal tracking-tight mt-4 mb-3">
+            Begin your calmer, AI-guided daily ritual
+          </h2>
+          <p class="text-charcoal-muted text-base sm:text-lg max-w-xl mx-auto mb-8">
+            Be the first to experience Jeevify on iOS and Android. Founding waitlist members receive priority access to Jeev AI and an automatic welcome email with their Founding Member perks.
+          </p>
+
+          <!-- Waitlist Form Container (Wired to Google Sheets Web App URL) -->
+          <form id="waitlist-form" onsubmit="submitWaitlistToSheets(event, 'main-waitlist')" class="max-w-xl mx-auto text-left" novalidate>
+            <input type="hidden" name="source" id="waitlist-source" value="jeevify.in - Waitlist Section" />
+            <input type="hidden" name="intention" id="waitlist-intention" value="Mindful Habits & Consistency" />
+            
+            <!-- Primary Intention Pill Selector (Syncs with hidden #waitlist-intention and Jeev AI Sandbox) -->
+            <div class="mb-6 text-center">
+              <p class="text-xs font-semibold uppercase tracking-wider text-charcoal-subtle mb-3">
+                Select Your Primary Intention for Jeev AI:
+              </p>
+              <div class="flex flex-wrap justify-center gap-2" id="waitlist-intention-pills">
+                <button type="button" onclick="selectWaitlistIntention('Mindful Habits & Consistency', this)" class="intention-pill text-xs font-medium px-3.5 py-2 rounded-full border border-forest bg-sage-light/80 text-forest transition-all">
+                  ✓ Mindful Habits &amp; Consistency
+                </button>
+                <button type="button" onclick="selectWaitlistIntention('Deep Focus & Flow', this)" class="intention-pill text-xs font-medium px-3.5 py-2 rounded-full border border-stonewarm bg-alabaster text-charcoal-muted hover:border-sage transition-all">
+                  Deep Focus &amp; Flow
+                </button>
+                <button type="button" onclick="selectWaitlistIntention('Mental Calm & Journaling', this)" class="intention-pill text-xs font-medium px-3.5 py-2 rounded-full border border-stonewarm bg-alabaster text-charcoal-muted hover:border-sage transition-all">
+                  Mental Calm &amp; Journaling
+                </button>
+                <button type="button" onclick="selectWaitlistIntention('Balanced Energy & Sleep', this)" class="intention-pill text-xs font-medium px-3.5 py-2 rounded-full border border-stonewarm bg-alabaster text-charcoal-muted hover:border-sage transition-all">
+                  Balanced Energy &amp; Sleep
+                </button>
+              </div>
+
+              <!-- Dynamic Synced Intention Badge (Shown when synced from Jeev AI Blueprint Sandbox) -->
+              <div id="synced-blueprint-badge" class="hidden mt-3 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-sage-light border border-sage-soft text-xs text-forest font-medium">
+                <svg class="w-3.5 h-3.5 text-forest animate-sparkle" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+                </svg>
+                <span>Synced Blueprint Goal: <strong id="synced-blueprint-text" class="font-semibold"></strong></span>
+              </div>
+            </div>
+
+            <!-- Name + Email Inputs -->
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 mb-3">
+              <div class="sm:col-span-5">
+                <label for="waitlist-name" class="sr-only">Your First Name</label>
+                <input
+                  id="waitlist-name"
+                  name="name"
+                  type="text"
+                  placeholder="Your first name (optional)"
+                  class="w-full px-4 py-4 rounded-2xl bg-alabaster border border-stonewarm text-charcoal placeholder-charcoal-subtle text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-forest focus:bg-white transition-all"
+                />
+              </div>
+              <div class="sm:col-span-7">
+                <label for="waitlist-email" class="sr-only">Email address</label>
+                <input
+                  id="waitlist-email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="Enter your email address..."
+                  class="w-full px-5 py-4 rounded-2xl bg-alabaster border border-stonewarm text-charcoal placeholder-charcoal-subtle text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-forest focus:bg-white transition-all"
+                />
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              id="waitlist-submit-btn"
+              class="w-full bg-forest hover:bg-forest-hover text-alabaster font-display font-semibold text-base px-7 py-4 rounded-2xl shadow-md hover:shadow-lg transition-all duration-200 whitespace-nowrap active:scale-[0.99] flex items-center justify-center gap-2"
+            >
+              <span id="waitlist-submit-text">Notify Me When We Launch</span>
+            </button>
+
+            <!-- Inline Validation Feedback -->
+            <p id="waitlist-error" class="hidden text-xs text-red-700 mt-2.5 text-center sm:text-left pl-2">
+              Please enter a valid email address so we can send your invite.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-charcoal-subtle mt-4 pt-2">
+              <span>🔒 Zero spam, ever. Instant welcome email from <strong>jeevify.in</strong>.</span>
+              <button type="button" onclick="openModal('webhook-modal')" class="text-forest hover:underline font-medium inline-flex items-center gap-1">
+                <span id="webhook-status-dot" class="w-2 h-2 rounded-full bg-sage-deep"></span>
+                <span>Google Sheets Webhook Settings</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Rewarding Confirmation State (Hidden until submit) -->
+          <div id="waitlist-success" class="hidden max-w-lg mx-auto bg-sage-light/60 border border-sage-soft rounded-3xl p-6 sm:p-8 text-center transition-all">
+            <div class="w-12 h-12 rounded-full bg-forest text-alabaster flex items-center justify-center mx-auto mb-4 shadow-sm">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-charcoal mb-1">
+              Namaste <span id="confirmed-name">Friend</span>! You're on the Jeevify Waitlist 🌿
+            </h3>
+            <p class="text-sm text-charcoal-muted mb-3">
+              We've logged <span id="confirmed-email" class="font-semibold text-charcoal">your email</span> to our Google Sheet with intention: <strong id="confirmed-intention" class="text-forest">Mindful Habits &amp; Consistency</strong>.
+            </p>
+            <div class="bg-white/90 rounded-2xl p-3.5 border border-sage-soft/80 text-xs text-charcoal-muted mb-5 text-left flex items-start gap-2.5">
+              <span class="text-base">📩</span>
+              <div>
+                <p class="font-semibold text-charcoal">Welcome Email Dispatched</p>
+                <p class="text-charcoal-subtle mt-0.5">Check your inbox for <em>"Welcome to Jeevify (जीव) — Your spot on the waitlist is reserved"</em>.</p>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <button type="button" onclick="copyShareLink()" class="inline-flex items-center gap-2 text-xs font-semibold bg-white hover:bg-alabaster text-forest px-4 py-2.5 rounded-xl border border-sage-soft shadow-sm transition-all">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                <span id="copy-btn-text">Share jeevify.in with a friend</span>
+              </button>
+              <button type="button" onclick="resetWaitlistForm()" class="text-xs font-medium text-charcoal-subtle hover:text-forest underline px-3 py-2">
+                Add another email
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 7. FOOTER ==================== -->
+  <footer class="bg-alabaster border-t border-stonewarm py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        
+        <!-- Brand Logo + Tagline -->
+        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+          <div class="flex items-center gap-3 mb-2">
+            <div class="w-8 h-8 rounded-xl bg-forest flex items-center justify-center text-alabaster">
+              <svg class="w-5 h-5" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="12" stroke="#E6EFE8" stroke-width="2" stroke-dasharray="60 16" stroke-linecap="round"/>
+                <path d="M16 23C16 23 23 19.5 23 12.5C23 10.5 22 9 20 9C15.5 9 12 13.5 12 18.5C12 20.5 13.5 22.5 16 23Z" fill="#7C9A82" fill-opacity="0.35" stroke="#FAF8F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="font-display font-bold text-xl text-charcoal tracking-tight">Jeevify</span>
+            <span class="text-xs font-medium text-forest bg-sage-light px-2.5 py-0.5 rounded-full border border-sage-soft/60">
+              jeevify.in
+            </span>
+          </div>
+          <p class="text-sm text-charcoal-muted font-medium">
+            Your life, elevated.
+          </p>
+        </div>
+
+        <!-- Footer Navigation & Modal Links -->
+        <div class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-charcoal-muted">
+          <a href="#features" class="hover:text-forest transition-colors">AI Features</a>
+          <a href="#jeev-ai-sandbox" class="hover:text-forest transition-colors">Jeev AI Demo</a>
+          <a href="#how-it-works" class="hover:text-forest transition-colors">How It Works</a>
+          <a href="#why-jeevify" class="hover:text-forest transition-colors">Why Jeevify</a>
+          <button type="button" onclick="openModal('privacy-modal')" class="hover:text-forest transition-colors focus:outline-none">
+            Privacy
+          </button>
+          <button type="button" onclick="openModal('contact-modal')" class="hover:text-forest transition-colors focus:outline-none">
+            Contact
+          </button>
+          <button type="button" onclick="openModal('webhook-modal')" class="hover:text-forest transition-colors focus:outline-none text-forest font-semibold">
+            Sheets Webhook Setup
+          </button>
+        </div>
+
+      </div>
+
+      <div class="mt-10 pt-8 border-t border-stonewarm/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-charcoal-subtle">
+        <p>© <span id="current-year">2026</span> Jeevify (jeevify.in). Crafted with calm intention.</p>
+        <p class="font-devanagari text-sm text-charcoal-muted">जीव • Live Better. Every Day.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== QUICK HERO WAITLIST MODAL (WIRED TO GOOGLE SHEETS) ==================== -->
+  <div id="quick-waitlist-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-charcoal/50 backdrop-blur-sm">
+    <div class="bg-alabaster rounded-3xl max-w-md w-full p-6 sm:p-8 border border-stonewarm shadow-elevated relative">
+      <div class="flex items-center justify-between pb-4 border-b border-stonewarm">
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-xl bg-forest text-alabaster flex items-center justify-center font-devanagari font-semibold text-sm">जीव</span>
+          <div>
+            <h3 class="font-display font-bold text-lg text-charcoal">Get Early Access to Jeevify</h3>
+            <p class="text-[11px] text-charcoal-subtle">Coming soon on iOS &amp; Android • jeevify.in</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeModal('quick-waitlist-modal')" class="p-2 rounded-full text-charcoal-subtle hover:bg-sand" aria-label="Close modal">
+          ✕
+        </button>
+      </div>
+
+      <form id="modal-waitlist-form" onsubmit="submitWaitlistToSheets(event, 'modal-waitlist')" class="py-5 space-y-3.5">
+        <input type="hidden" name="source" id="modal-waitlist-source" value="jeevify.in - Quick Hero Modal" />
+        <div>
+          <label for="modal-name" class="block text-xs font-semibold uppercase tracking-wider text-charcoal-subtle mb-1">First Name</label>
+          <input
+            id="modal-name"
+            name="name"
+            type="text"
+            placeholder="e.g., Aarav"
+            class="w-full px-4 py-3 rounded-xl bg-white border border-stonewarm text-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-forest"
+          />
+        </div>
+        <div>
+          <label for="modal-email" class="block text-xs font-semibold uppercase tracking-wider text-charcoal-subtle mb-1">Email Address *</label>
+          <input
+            id="modal-email"
+            name="email"
+            type="email"
+            required
+            placeholder="you@example.com"
+            class="w-full px-4 py-3 rounded-xl bg-white border border-stonewarm text-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-forest"
+          />
+        </div>
+        <div>
+          <label for="modal-intention" class="block text-xs font-semibold uppercase tracking-wider text-charcoal-subtle mb-1">Primary Intention for Jeev AI</label>
+          <select
+            id="modal-intention"
+            name="intention"
+            class="w-full px-4 py-3 rounded-xl bg-white border border-stonewarm text-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-forest"
+          >
+            <option value="Mindful Habits & Consistency">🌿 Mindful Habits &amp; Consistency</option>
+            <option value="Deep Focus & Flow">🎯 Deep Focus &amp; Flow</option>
+            <option value="Mental Calm & Journaling">📖 Mental Calm &amp; Journaling</option>
+            <option value="Balanced Energy & Sleep">🌙 Balanced Energy &amp; Sleep</option>
+          </select>
+        </div>
+        <button
+          type="submit"
+          id="modal-submit-btn"
+          class="w-full bg-forest hover:bg-forest-hover text-alabaster font-display font-semibold text-sm px-6 py-3.5 rounded-xl shadow-md transition-all"
+        >
+          Notify Me When We Launch
+        </button>
+        <p id="modal-waitlist-feedback" class="hidden text-xs font-medium text-center pt-1"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== GOOGLE SHEETS WEBHOOK SETUP & TEST MODAL ==================== -->
+  <div id="webhook-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-charcoal/50 backdrop-blur-sm">
+    <div class="bg-alabaster rounded-3xl max-w-xl w-full p-6 sm:p-8 border border-stonewarm shadow-elevated relative">
+      <div class="flex items-center justify-between pb-4 border-b border-stonewarm">
+        <div>
+          <h3 class="font-display font-bold text-xl text-charcoal">Google Sheets Webhook Configuration</h3>
+          <p class="text-xs text-charcoal-subtle">Connect your Google Apps Script Web App URL for live sheet logging &amp; welcome emails</p>
+        </div>
+        <button type="button" onclick="closeModal('webhook-modal')" class="p-2 rounded-full text-charcoal-subtle hover:bg-sand" aria-label="Close modal">
+          ✕
+        </button>
+      </div>
+
+      <div class="py-5 space-y-4 text-sm text-charcoal-muted max-h-[70vh] overflow-y-auto">
+        <div>
+          <label for="custom-webhook-url-input" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1.5">
+            Google Apps Script Web App URL (<code>/exec</code>)
+          </label>
+          <input
+            id="custom-webhook-url-input"
+            type="url"
+            placeholder="https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec"
+            class="w-full px-4 py-3 rounded-xl bg-white border border-stonewarm text-charcoal text-xs sm:text-sm font-mono focus:outline-none focus:ring-2 focus:ring-forest"
+          />
+          <p class="text-[11px] text-charcoal-subtle mt-1.5">
+            Paste your deployed Google Apps Script URL above to test live submissions from this preview, or set the <code>GOOGLE_SHEETS_WEB_APP_URL</code> constant directly at the top of the <code>&lt;script&gt;</code> tag.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-4 border border-stonewarm space-y-2 text-xs">
+          <div class="flex items-center justify-between">
+            <span class="font-semibold text-charcoal uppercase tracking-wider">Payload Format Sent via <code>fetch()</code></span>
+            <span class="bg-sage-light text-forest px-2 py-0.5 rounded font-mono text-[11px]">mode: 'no-cors' • text/plain</span>
+          </div>
+          <pre class="bg-alabaster p-3 rounded-xl border border-sand text-[11px] font-mono text-charcoal overflow-x-auto">{
+  "name": "Aarav",
+  "email": "aarav@example.com",
+  "intention": "Mindful Habits & Consistency",
+  "source": "jeevify.in - Waitlist Section"
+}</pre>
+        </div>
+
+        <!-- Recent Local Submissions Log -->
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="text-xs font-semibold uppercase tracking-wider text-charcoal-subtle">Recent Waitlist Submissions (Session Log)</span>
+            <span id="submission-log-count" class="text-[11px] font-medium text-forest">0 logged</span>
+          </div>
+          <div id="submission-log-list" class="bg-white rounded-2xl p-3 border border-stonewarm text-xs text-charcoal-subtle max-h-28 overflow-y-auto space-y-1.5">
+            <p class="italic">No waitlist submissions recorded in this session yet.</p>
+          </div>
+        </div>
+
+        <p id="webhook-save-feedback" class="hidden text-xs font-semibold text-forest"></p>
+      </div>
+
+      <div class="pt-4 border-t border-stonewarm flex flex-wrap items-center justify-between gap-3">
+        <button type="button" onclick="sendTestWebhookPing()" id="test-webhook-btn" class="text-xs font-semibold bg-sage-light hover:bg-sage-soft text-forest px-4 py-2.5 rounded-full transition-colors">
+          Send Test Row to Sheet
+        </button>
+        <div class="flex items-center gap-2">
+          <button type="button" onclick="saveWebhookUrlFromModal()" class="bg-forest hover:bg-forest-hover text-alabaster text-xs sm:text-sm font-medium px-5 py-2.5 rounded-full transition-colors">
+            Save Webhook URL
+          </button>
+          <button type="button" onclick="closeModal('webhook-modal')" class="bg-sand hover:bg-stonewarm text-charcoal text-xs sm:text-sm font-medium px-4 py-2.5 rounded-full transition-colors">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PRIVACY POLICY MODAL ==================== -->
+  <div id="privacy-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-charcoal/50 backdrop-blur-sm">
+    <div class="bg-alabaster rounded-3xl max-w-lg w-full p-6 sm:p-8 border border-stonewarm shadow-elevated relative">
+      <div class="flex items-center justify-between pb-4 border-b border-stonewarm">
+        <h3 class="font-display font-bold text-xl text-charcoal">Privacy Policy — jeevify.in</h3>
+        <button type="button" onclick="closeModal('privacy-modal')" class="p-2 rounded-full text-charcoal-subtle hover:bg-sand" aria-label="Close modal">
+          ✕
+        </button>
+      </div>
+      <div class="py-5 space-y-3 text-sm text-charcoal-muted leading-relaxed max-h-[60vh] overflow-y-auto">
+        <p><strong class="text-charcoal">1. Your Sanctuary is Private:</strong> At Jeevify, we believe your personal habits, mood reflections, and journal entries belong strictly to you.</p>
+        <p><strong class="text-charcoal">2. Waitlist Information:</strong> When you join the early access waitlist on <code>jeevify.in</code>, your email address is used solely to send launch updates and your early access invitation.</p>
+        <p><strong class="text-charcoal">3. Zero Ad-Tracking:</strong> We never sell, rent, or trade your personal wellness data to advertisers or third parties.</p>
+      </div>
+      <div class="pt-4 border-t border-stonewarm text-right">
+        <button type="button" onclick="closeModal('privacy-modal')" class="bg-forest text-alabaster text-sm font-medium px-5 py-2.5 rounded-full">
+          Got It
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== CONTACT MODAL ==================== -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-charcoal/50 backdrop-blur-sm">
+    <div class="bg-alabaster rounded-3xl max-w-lg w-full p-6 sm:p-8 border border-stonewarm shadow-elevated relative">
+      <div class="flex items-center justify-between pb-4 border-b border-stonewarm">
+        <h3 class="font-display font-bold text-xl text-charcoal">Connect with Jeevify</h3>
+        <button type="button" onclick="closeModal('contact-modal')" class="p-2 rounded-full text-charcoal-subtle hover:bg-sand" aria-label="Close modal">
+          ✕
+        </button>
+      </div>
+      <div class="py-5 space-y-4 text-sm text-charcoal-muted">
+        <p>Have a question, partnership inquiry, or mindful feature suggestion for Jeevify? We'd love to hear from you.</p>
+        <div class="bg-white p-4 rounded-2xl border border-stonewarm flex items-center justify-between">
+          <div>
+            <p class="text-xs uppercase tracking-wider text-charcoal-subtle">Email Us Directly</p>
+            <p class="font-display font-semibold text-base text-forest">hello@jeevify.in</p>
+          </div>
+          <button type="button" onclick="copyEmailAddress()" id="copy-email-btn" class="text-xs font-medium bg-sage-light text-forest px-3.5 py-2 rounded-xl hover:bg-sage-soft transition-colors">
+            Copy Email
+          </button>
+        </div>
+        <p class="text-xs text-charcoal-subtle">Website: <strong class="text-charcoal">https://jeevify.in</strong></p>
+      </div>
+      <div class="pt-4 border-t border-stonewarm text-right">
+        <button type="button" onclick="closeModal('contact-modal')" class="bg-forest text-alabaster text-sm font-medium px-5 py-2.5 rounded-full">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== INTERACTIVE JAVASCRIPT ==================== -->
+  <script>
+    // ============================================================================
+    // GOOGLE SHEETS WEB APP CONFIGURATION
+    // Paste your deployed Google Apps Script Web App URL (/exec) below,
+    // or configure it dynamically via the "Sheets Webhook Setup" modal in the UI.
+    // ============================================================================
+    const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID_HERE/exec';
+
+    function getActiveWebhookUrl() {
+      try {
+        const savedUrl = localStorage.getItem('jeevify_sheets_webhook_url');
+        if (savedUrl && savedUrl.trim().startsWith('https://script.google.com/')) {
+          return savedUrl.trim();
+        }
+      } catch (e) {}
+      return GOOGLE_SHEETS_WEB_APP_URL;
+    }
+
+    function isWebhookConfigured(url) {
+      return Boolean(url && url.startsWith('https://script.google.com/') && !url.includes('YOUR_DEPLOYMENT_ID_HERE'));
+    }
+
+    // Track submissions in memory for the Webhook Inspector modal
+    const sessionSubmissions = [];
+
+    // Set dynamic year & initialize webhook input if stored
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    (function initWebhookStatus() {
+      const activeUrl = getActiveWebhookUrl();
+      const inputEl = document.getElementById('custom-webhook-url-input');
+      if (inputEl && isWebhookConfigured(activeUrl)) {
+        inputEl.value = activeUrl;
+      }
+    })();
+
+    // Mobile Menu Toggle Logic
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIconOpen.classList.add('hidden');
+        menuIconClose.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      }
+    });
+
+    // Close mobile menu when clicking an anchor link
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      });
+    });
+
+    // Interactive Phone Mockup State: Habits & Wellness Ring
+    const habitState = [true, true, false];
+    const circumference = 163.36; // 2 * pi * 26
+
+    function toggleHabit(index) {
+      habitState[index] = !habitState[index];
+      renderHabitsAndRing();
+    }
+
+    function renderHabitsAndRing() {
+      const habitButtons = document.querySelectorAll('.habit-item');
+      let completedCount = 0;
+
+      habitState.forEach((done, idx) => {
+        if (done) completedCount++;
+        const btn = habitButtons[idx];
+        const checkbox = btn.querySelector('.habit-checkbox');
+        const title = btn.querySelector('.habit-title');
+
+        if (done) {
+          btn.className = 'habit-item w-full flex items-center justify-between p-3 rounded-xl border border-sage-soft/80 bg-sage-light/40 text-left transition-all duration-200 hover:bg-sage-light/70';
+          checkbox.className = 'habit-checkbox w-5 h-5 rounded-full bg-forest text-alabaster flex items-center justify-center transition-colors';
+          title.classList.add('line-through', 'opacity-75');
+        } else {
+          btn.className = 'habit-item w-full flex items-center justify-between p-3 rounded-xl border border-stonewarm bg-white text-left transition-all duration-200 hover:border-sage';
+          checkbox.className = 'habit-checkbox w-5 h-5 rounded-full border-2 border-sage text-transparent flex items-center justify-center transition-colors';
+          title.classList.remove('line-through', 'opacity-75');
+        }
+      });
+
+      // Calculate score: base 45% + completed habits
+      const scores = [45, 60, 75, 100];
+      const currentScore = scores[completedCount];
+      const offset = circumference - (currentScore / 100) * circumference;
+
+      document.getElementById('wellness-ring').style.strokeDashoffset = offset;
+      document.getElementById('wellness-score-text').textContent = currentScore + '%';
+      document.getElementById('wellness-status-sub').textContent = `${completedCount} of 3 mindful rituals complete`;
+
+      const statusTitle = document.getElementById('wellness-status-title');
+      const streakBadge = document.getElementById('streak-badge');
+
+      if (completedCount === 3) {
+        statusTitle.textContent = 'Radiant & Complete ✨';
+        streakBadge.textContent = '🌿 13 Day Flow!';
+      } else if (completedCount === 2) {
+        statusTitle.textContent = 'Grounded & Focused';
+        streakBadge.textContent = '🌱 12 Day Flow';
+      } else {
+        statusTitle.textContent = 'Gentle Morning Start';
+        streakBadge.textContent = '🌱 12 Day Flow';
+      }
+    }
+
+    // Interactive 25-Min Focus Timer Preview
+    let timerRunning = false;
+    let remainingSeconds = 25 * 60;
+    let timerInterval = null;
+
+    function toggleFocusTimer() {
+      const playIcon = document.getElementById('timer-play-icon');
+      const pauseIcon = document.getElementById('timer-pause-icon');
+      const statusText = document.getElementById('focus-timer-status');
+      const display = document.getElementById('focus-timer-display');
+
+      timerRunning = !timerRunning;
+
+      if (timerRunning) {
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+        statusText.textContent = 'Breathe deeply — Focus flow active';
+        timerInterval = setInterval(() => {
+          if (remainingSeconds > 0) {
+            remainingSeconds--;
+            const mins = String(Math.floor(remainingSeconds / 60)).padStart(2, '0');
+            const secs = String(remainingSeconds % 60).padStart(2, '0');
+            display.textContent = `${mins}:${secs}`;
+          }
+        }, 1000);
+      } else {
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
+        statusText.textContent = 'Session paused — Take a mindful breath';
+        clearInterval(timerInterval);
+      }
+    }
+
+    // Interactive Mood Check-in Pills
+    function selectMood(selectedBtn, label, moodKey) {
+      document.querySelectorAll('.mood-pill').forEach(btn => {
+        btn.className = 'mood-pill py-2 px-2 rounded-xl text-xs font-medium bg-alabaster text-charcoal-muted border border-stonewarm hover:border-sage transition-all';
+      });
+      selectedBtn.className = 'mood-pill py-2 px-2 rounded-xl text-xs font-medium bg-forest text-alabaster border border-forest transition-all';
+      document.getElementById('mood-feedback').textContent = label;
+
+      // Update the live Jeev AI adaptive insight inside the Sanctuary card immediately
+      const insightMap = {
+        'Calm': 'Your energy is steady today. Keep your evening reflection light (3 mins) to protect your sleep window.',
+        'Focused': 'Peak clarity detected. Jeev AI queued a 25-min deep work block with Monsoon Rain audio.',
+        'Radiant': 'High vitality logged! Great window to complete your outdoor walk and tackle your top priority.',
+        'Low Energy': 'Gentle Rest Mode activated: Jeev AI scaled your evening journal down to 1 gratitude breath—zero streak penalty.'
+      };
+      const insightEl = document.getElementById('sanctuary-ai-insight');
+      if (insightEl && insightMap[moodKey]) {
+        insightEl.textContent = insightMap[moodKey];
+      }
+    }
+
+    // Switch between Sanctuary Tab and Jeev AI Coach Tab inside Hero Mobile Preview
+    function switchPhoneTab(tabName) {
+      const sanctuaryView = document.getElementById('phone-tab-sanctuary');
+      const aiView = document.getElementById('phone-tab-ai');
+      const btnSanctuary = document.getElementById('tab-btn-sanctuary');
+      const btnAi = document.getElementById('tab-btn-ai');
+
+      if (tabName === 'ai') {
+        sanctuaryView.classList.add('hidden');
+        aiView.classList.remove('hidden');
+        btnAi.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-forest text-alabaster shadow-sm flex items-center gap-1 transition-all';
+        btnSanctuary.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold text-charcoal-muted hover:bg-sage-light/60 transition-all';
+      } else {
+        aiView.classList.add('hidden');
+        sanctuaryView.classList.remove('hidden');
+        btnSanctuary.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-forest text-alabaster shadow-sm transition-all';
+        btnAi.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold text-forest hover:bg-sage-light/60 flex items-center gap-1 transition-all';
+      }
+    }
+
+    function openHeroAiTabOrScroll(event) {
+      event.preventDefault();
+      const sandbox = document.getElementById('jeev-ai-sandbox');
+      if (sandbox) {
+        sandbox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function setHeroAiPreset(text) {
+      const input = document.getElementById('hero-ai-input');
+      if (input) {
+        input.value = text;
+        generateHeroMicroRoutine();
+      }
+    }
+
+    // ==================== GEMINI API INTEGRATION (WITH EXPONENTIAL BACKOFF) ====================
+    const apiKey = ""; // Canvas provides runtime key automatically when empty string
+
+    async function callGeminiStructured(userPrompt, systemPrompt, schema) {
+      const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+      const payload = {
+        contents: [{ parts: [{ text: userPrompt }] }],
+        systemInstruction: { parts: [{ text: systemPrompt }] },
+        generationConfig: {
+          responseMimeType: "application/json",
+          responseSchema: schema
+        }
+      };
+
+      const delays = [1000, 2000, 4000];
+      for (let attempt = 0; attempt <= delays.length; attempt++) {
+        try {
+          const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+          }
+          const result = await response.json();
+          const jsonText = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (jsonText) {
+            return JSON.parse(jsonText);
+          }
+          throw new Error('Empty response');
+        } catch (err) {
+          if (attempt === delays.length) {
+            throw err;
+          }
+          await new Promise(res => setTimeout(res, delays[attempt]));
+        }
+      }
+    }
+
+    // 1. Hero Mobile Preview: Generate Personalized Micro-Routine via Gemini API
+    let latestHeroRitual = {
+      title: "Box Breathing & Single-Priority Clear",
+      duration: "10 mins • Gentle",
+      description: "Close open tabs, take 4 slow box breaths, and write down just one gentle task for the next 20 minutes.",
+      journalPrompt: "What can I let go of today?"
+    };
+
+    async function generateHeroMicroRoutine() {
+      const inputEl = document.getElementById('hero-ai-input');
+      const btnEl = document.getElementById('hero-ai-submit-btn');
+      const userGoal = (inputEl?.value || '').trim() || 'Need a calm 10-minute mindful reset';
+
+      const originalBtnHtml = btnEl.innerHTML;
+      btnEl.disabled = true;
+      btnEl.innerHTML = `<span>Thinking...</span>`;
+
+      const systemPrompt = "You are Jeev AI, the calm, compassionate wellness and mindful productivity intelligence inside Jeevify (jeevify.in). Create a concise, soothing micro-routine tailored to the user's current state or goal.";
+      const schema = {
+        type: "OBJECT",
+        properties: {
+          title: { type: "STRING" },
+          duration: { type: "STRING" },
+          description: { type: "STRING" },
+          journalPrompt: { type: "STRING" }
+        },
+        propertyOrdering: ["title", "duration", "description", "journalPrompt"]
+      };
+
+      try {
+        const data = await callGeminiStructured(
+          `User current state or goal: "${userGoal}". Generate a gentle micro-routine with a short title (max 5 words), duration tag (e.g. "8 mins • Restorative"), 1-sentence calm instruction, and a short 1-sentence reflective journal prompt.`,
+          systemPrompt,
+          schema
+        );
+        latestHeroRitual = data;
+      } catch (e) {
+        // Graceful local fallback so preview always feels responsive
+        latestHeroRitual = {
+          title: "Mindful Reset & Gentle Pacing",
+          duration: "8 mins • Adaptive",
+          description: `Step away from screens for 3 slow breaths, sip water, and break "${userGoal.slice(0, 32)}" into one tiny, guilt-free first step.`,
+          journalPrompt: "What is one small way I can be kind to my energy right now?"
+        };
+      }
+
+      document.getElementById('hero-ai-ritual-title').textContent = latestHeroRitual.title;
+      document.getElementById('hero-ai-duration').textContent = latestHeroRitual.duration;
+      document.getElementById('hero-ai-ritual-desc').textContent = latestHeroRitual.description;
+      document.getElementById('hero-ai-journal-prompt').textContent = `"${latestHeroRitual.journalPrompt}"`;
+
+      btnEl.disabled = false;
+      btnEl.innerHTML = originalBtnHtml;
+    }
+
+    function applyHeroAiRitualToSanctuary() {
+      document.getElementById('customizable-habit-title').textContent = latestHeroRitual.title;
+      document.getElementById('customizable-habit-meta').textContent = `${latestHeroRitual.duration} • Added by Jeev AI`;
+      document.getElementById('sanctuary-ai-insight').textContent = `Jeev AI updated your sanctuary with "${latestHeroRitual.title}". Prompt: ${latestHeroRitual.journalPrompt}`;
+      habitState[2] = false;
+      renderHabitsAndRing();
+      switchPhoneTab('sanctuary');
+    }
+
+    // 2. Main Interactive Sandbox: Generate 3-Part Jeevify Daily Blueprint via Gemini API
+    function selectSandboxPreset(goalText) {
+      const input = document.getElementById('sandbox-goal-input');
+      if (input) {
+        input.value = goalText;
+        handleBlueprintGenerate(new Event('submit'));
+      }
+    }
+
+    async function handleBlueprintGenerate(event) {
+      if (event && event.preventDefault) event.preventDefault();
+
+      const goalInput = document.getElementById('sandbox-goal-input');
+      const energySelect = document.getElementById('sandbox-energy-select');
+      const loadingBox = document.getElementById('sandbox-loading');
+      const resultsBox = document.getElementById('sandbox-results');
+      const btnText = document.getElementById('sandbox-btn-text');
+      const generateBtn = document.getElementById('sandbox-generate-btn');
+
+      const userGoal = (goalInput?.value || '').trim() || 'Wake up earlier without feeling exhausted';
+      const userEnergy = energySelect?.value || 'Balanced & Steady';
+
+      generateBtn.disabled = true;
+      btnText.textContent = 'Crafting Blueprint...';
+      loadingBox.classList.remove('hidden');
+      resultsBox.classList.add('opacity-40');
+
+      const systemPrompt = "You are Jeev AI, the mindful, adaptive AI coach for Jeevify (jeevify.in). Design a calm, realistic 3-part daily blueprint (Morning Anchor, Midday Focus, Evening Restore) plus a compassionate low-energy adaptation rule.";
+      const schema = {
+        type: "OBJECT",
+        properties: {
+          morningTitle: { type: "STRING" },
+          morningDuration: { type: "STRING" },
+          morningDesc: { type: "STRING" },
+          middayTitle: { type: "STRING" },
+          middayDuration: { type: "STRING" },
+          middayDesc: { type: "STRING" },
+          eveningTitle: { type: "STRING" },
+          eveningDuration: { type: "STRING" },
+          eveningDesc: { type: "STRING" },
+          adaptiveNote: { type: "STRING" }
+        },
+        propertyOrdering: [
+          "morningTitle", "morningDuration", "morningDesc",
+          "middayTitle", "middayDuration", "middayDesc",
+          "eveningTitle", "eveningDuration", "eveningDesc",
+          "adaptiveNote"
+        ]
+      };
+
+      try {
+        const bp = await callGeminiStructured(
+          `User Goal: "${userGoal}". Current Energy Level: "${userEnergy}". Generate a warm, practical 3-part daily routine and explain in 1 sentence how Jeev AI scales it down gently on a low-energy day.`,
+          systemPrompt,
+          schema
+        );
+
+        document.getElementById('bp-morning-title').textContent = bp.morningTitle;
+        document.getElementById('bp-morning-duration').textContent = bp.morningDuration;
+        document.getElementById('bp-morning-desc').textContent = bp.morningDesc;
+
+        document.getElementById('bp-midday-title').textContent = bp.middayTitle;
+        document.getElementById('bp-midday-duration').textContent = bp.middayDuration;
+        document.getElementById('bp-midday-desc').textContent = bp.middayDesc;
+
+        document.getElementById('bp-evening-title').textContent = bp.eveningTitle;
+        document.getElementById('bp-evening-duration').textContent = bp.eveningDuration;
+        document.getElementById('bp-evening-desc').textContent = bp.eveningDesc;
+
+        document.getElementById('bp-adaptive-note').textContent = bp.adaptiveNote;
+      } catch (err) {
+        // Thoughtful contextual fallback if offline
+        document.getElementById('bp-morning-title').textContent = 'Mindful Sunlight & Intention Anchor';
+        document.getElementById('bp-morning-duration').textContent = '10 mins';
+        document.getElementById('bp-morning-desc').textContent = `Start your morning with natural light and a calm 2-minute check-in aligned with "${userGoal}".`;
+
+        document.getElementById('bp-midday-title').textContent = 'Energy-Aligned Deep Focus Block';
+        document.getElementById('bp-midday-duration').textContent = '35 mins';
+        document.getElementById('bp-midday-desc').textContent = `Pair your core daily action with ambient nature audio during your ${userEnergy.toLowerCase()} rhythm, followed by a screen-free stretch.`;
+
+        document.getElementById('bp-evening-title').textContent = 'Guided Evening Reflection & Unwind';
+        document.getElementById('bp-evening-duration').textContent = '10 mins';
+        document.getElementById('bp-evening-desc').textContent = 'Close open mental loops with 2 AI-guided gratitude prompts so your nervous system can rest deeply.';
+
+        document.getElementById('bp-adaptive-note').textContent = `On low-capacity days, Jeev AI automatically scales "${userGoal}" down to a 3-minute micro-ritual so your habit rhythm stays unbroken without stress.`;
+      }
+
+      loadingBox.classList.add('hidden');
+      resultsBox.classList.remove('opacity-40');
+      generateBtn.disabled = false;
+      btnText.textContent = 'Generate AI Blueprint';
+    }
+
+    // Smooth scroll & focus on Waitlist Email input
+    function focusWaitlistInput(event) {
+      if (event && event.preventDefault) event.preventDefault();
+      const waitlistSection = document.getElementById('waitlist');
+      const emailInput = document.getElementById('waitlist-email');
+      waitlistSection.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        if (emailInput) emailInput.focus();
+      }, 600);
+    }
+
+    // Save Blueprint Goal from Jeev AI Sandbox & Pre-fill Waitlist Intention
+    function saveBlueprintAndPrefillWaitlist() {
+      const sandboxGoalInput = document.getElementById('sandbox-goal-input');
+      const customGoal = (sandboxGoalInput?.value || '').trim() || 'Wake up earlier without feeling exhausted';
+
+      // Update hidden intention field on the main waitlist form
+      const intentionInput = document.getElementById('waitlist-intention');
+      if (intentionInput) {
+        intentionInput.value = customGoal;
+      }
+
+      // Show synced badge in the waitlist section
+      const syncedBadge = document.getElementById('synced-blueprint-badge');
+      const syncedText = document.getElementById('synced-blueprint-text');
+      if (syncedBadge && syncedText) {
+        syncedText.textContent = customGoal;
+        syncedBadge.classList.remove('hidden');
+      }
+
+      // Reset visual state on standard pills so user sees their custom goal is active
+      document.querySelectorAll('.intention-pill').forEach(btn => {
+        const cleanLabel = btn.textContent.trim().replace(/^✓\s*/, '');
+        btn.className = 'intention-pill text-xs font-medium px-3.5 py-2 rounded-full border border-stonewarm bg-alabaster text-charcoal-muted hover:border-sage transition-all';
+        btn.textContent = cleanLabel;
+      });
+
+      // Scroll smoothly to the waitlist section and focus name/email
+      const waitlistSection = document.getElementById('waitlist');
+      if (waitlistSection) {
+        waitlistSection.scrollIntoView({ behavior: 'smooth' });
+      }
+      setTimeout(() => {
+        const nameInput = document.getElementById('waitlist-name');
+        if (nameInput) nameInput.focus();
+      }, 600);
+    }
+
+    // Select Primary Intention Pill in the Main Waitlist Section
+    function selectWaitlistIntention(intentionValue, clickedBtn) {
+      const intentionInput = document.getElementById('waitlist-intention');
+      if (intentionInput) {
+        intentionInput.value = intentionValue;
+      }
+
+      // Hide custom synced blueprint badge when selecting a standard pill
+      const syncedBadge = document.getElementById('synced-blueprint-badge');
+      if (syncedBadge) {
+        syncedBadge.classList.add('hidden');
+      }
+
+      document.querySelectorAll('.intention-pill').forEach(btn => {
+        const cleanLabel = btn.textContent.trim().replace(/^✓\s*/, '');
+        btn.className = 'intention-pill text-xs font-medium px-3.5 py-2 rounded-full border border-stonewarm bg-alabaster text-charcoal-muted hover:border-sage transition-all';
+        btn.textContent = cleanLabel;
+      });
+
+      if (clickedBtn) {
+        clickedBtn.className = 'intention-pill text-xs font-medium px-3.5 py-2 rounded-full border border-forest bg-sage-light/80 text-forest transition-all';
+        clickedBtn.textContent = '✓ ' + intentionValue;
+      }
+    }
+
+    // Unified Waitlist Form Submission Wired to Google Sheets Web App URL
+    async function submitWaitlistToSheets(event, formContext) {
+      event.preventDefault();
+      const formEl = event.target;
+      const formData = new FormData(formEl);
+
+      const name = (formData.get('name') || '').toString().trim();
+      const email = (formData.get('email') || '').toString().trim().toLowerCase();
+      const intention = (formData.get('intention') || 'Mindful Habits & Consistency').toString().trim();
+      const source = (formData.get('source') || 'jeevify.in Waitlist').toString().trim();
+
+      const validEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (formContext === 'main-waitlist') {
+        const emailInput = document.getElementById('waitlist-email');
+        const errorMsg = document.getElementById('waitlist-error');
+        if (!validEmailRegex.test(email)) {
+          errorMsg.classList.remove('hidden');
+          emailInput.classList.add('ring-2', 'ring-red-500');
+          return;
+        }
+        errorMsg.classList.add('hidden');
+        emailInput.classList.remove('ring-2', 'ring-red-500');
+      } else if (!validEmailRegex.test(email)) {
+        return;
+      }
+
+      const payload = { name, email, intention, source };
+      const webhookUrl = getActiveWebhookUrl();
+
+      // Update button loading state depending on which form was submitted
+      let submitBtn = null;
+      let originalBtnText = '';
+
+      if (formContext === 'main-waitlist') {
+        submitBtn = document.getElementById('waitlist-submit-btn');
+        originalBtnText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span>Reserving your spot &amp; sending welcome email...</span>`;
+      } else if (formContext === 'hero-inline') {
+        submitBtn = document.getElementById('hero-inline-submit-btn');
+        originalBtnText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Saving...';
+      } else if (formContext === 'modal-waitlist') {
+        submitBtn = document.getElementById('modal-submit-btn');
+        originalBtnText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Reserving your spot...';
+      }
+
+      try {
+        // Send POST request to Google Sheets Web App using mode: 'no-cors' and text/plain
+        if (isWebhookConfigured(webhookUrl)) {
+          await fetch(webhookUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(payload)
+          });
+        } else {
+          // Brief simulated network latency when using placeholder URL in preview
+          await new Promise(resolve => setTimeout(resolve, 450));
+        }
+
+        // Record in session log for inspection
+        sessionSubmissions.unshift({
+          timestamp: new Date().toLocaleTimeString(),
+          ...payload,
+          mode: isWebhookConfigured(webhookUrl) ? 'Live Sheet POST' : 'Preview Mode'
+        });
+        renderSessionSubmissionLog();
+
+        // Render confirmation state
+        if (formContext === 'main-waitlist') {
+          document.getElementById('confirmed-name').textContent = name ? name.split(' ')[0] : 'Friend';
+          document.getElementById('confirmed-email').textContent = email;
+          document.getElementById('confirmed-intention').textContent = intention;
+          document.getElementById('waitlist-form').classList.add('hidden');
+          document.getElementById('waitlist-success').classList.remove('hidden');
+        } else if (formContext === 'hero-inline') {
+          formEl.reset();
+          const feedback = document.getElementById('hero-inline-feedback');
+          feedback.textContent = `✓ Welcome ${name || 'Friend'}! Spot reserved for ${email} — check your inbox for our welcome note.`;
+          feedback.className = 'text-xs font-medium mt-2 px-2 text-left text-forest block';
+        } else if (formContext === 'modal-waitlist') {
+          formEl.reset();
+          const feedback = document.getElementById('modal-waitlist-feedback');
+          feedback.textContent = `✓ Spot reserved for ${email}! Check your inbox for your Jeevify welcome email.`;
+          feedback.className = 'text-xs font-semibold text-forest text-center pt-2 block';
+          setTimeout(() => {
+            closeModal('quick-waitlist-modal');
+            feedback.classList.add('hidden');
+          }, 2200);
+        }
+      } catch (err) {
+        if (formContext === 'hero-inline') {
+          const feedback = document.getElementById('hero-inline-feedback');
+          feedback.textContent = 'Could not connect right now. Please try again in a moment.';
+          feedback.className = 'text-xs font-medium mt-2 px-2 text-left text-red-600 block';
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          if (formContext === 'main-waitlist') {
+            submitBtn.innerHTML = originalBtnText;
+          } else {
+            submitBtn.textContent = originalBtnText;
+          }
+        }
+      }
+    }
+
+    function resetWaitlistForm() {
+      const form = document.getElementById('waitlist-form');
+      const successBox = document.getElementById('waitlist-success');
+      form.reset();
+      successBox.classList.add('hidden');
+      form.classList.remove('hidden');
+    }
+
+    // Webhook Settings Modal Helpers
+    function saveWebhookUrlFromModal() {
+      const inputEl = document.getElementById('custom-webhook-url-input');
+      const feedbackEl = document.getElementById('webhook-save-feedback');
+      const urlVal = (inputEl?.value || '').trim();
+
+      try {
+        if (urlVal) {
+          localStorage.setItem('jeevify_sheets_webhook_url', urlVal);
+          feedbackEl.textContent = '✓ Google Sheets Web App URL saved to browser storage! All waitlist forms will now POST live to your sheet.';
+        } else {
+          localStorage.removeItem('jeevify_sheets_webhook_url');
+          feedbackEl.textContent = 'Cleared custom URL. Reverted to default constant.';
+        }
+        feedbackEl.classList.remove('hidden');
+      } catch (e) {}
+    }
+
+    async function sendTestWebhookPing() {
+      const btn = document.getElementById('test-webhook-btn');
+      const feedbackEl = document.getElementById('webhook-save-feedback');
+      const inputEl = document.getElementById('custom-webhook-url-input');
+      const candidateUrl = (inputEl?.value || '').trim() || getActiveWebhookUrl();
+
+      const testPayload = {
+        name: 'Jeevify Test User',
+        email: `test.${Date.now().toString().slice(-4)}@jeevify.in`,
+        intention: 'Mindful Habits & Consistency (Webhook Test)',
+        source: 'jeevify.in - Webhook Test Button'
+      };
+
+      btn.disabled = true;
+      btn.textContent = 'Sending test row...';
+
+      try {
+        if (isWebhookConfigured(candidateUrl)) {
+          await fetch(candidateUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(testPayload)
+          });
+          feedbackEl.textContent = `✓ Dispatched test row (${testPayload.email}) to your Google Sheet via no-cors POST!`;
+        } else {
+          feedbackEl.textContent = `Simulated test payload (${testPayload.email}). Paste your live https://script.google.com/macros/s/.../exec URL above to send to Google Sheets.`;
+        }
+        feedbackEl.classList.remove('hidden');
+        sessionSubmissions.unshift({
+          timestamp: new Date().toLocaleTimeString(),
+          ...testPayload,
+          mode: isWebhookConfigured(candidateUrl) ? 'Live Sheet POST' : 'Simulated Test'
+        });
+        renderSessionSubmissionLog();
+      } catch (e) {
+        feedbackEl.textContent = 'Error sending test ping. Please verify your Web App URL.';
+        feedbackEl.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send Test Row to Sheet';
+      }
+    }
+
+    function renderSessionSubmissionLog() {
+      const listEl = document.getElementById('submission-log-list');
+      const countEl = document.getElementById('submission-log-count');
+      if (!listEl || !countEl) return;
+
+      countEl.textContent = `${sessionSubmissions.length} logged`;
+      if (sessionSubmissions.length === 0) return;
+
+      listEl.innerHTML = sessionSubmissions
+        .map(item => `<div class="flex items-center justify-between border-b border-sand pb-1">
+          <span><strong>${item.email}</strong> (${item.name || 'No name'}) — <em>${item.intention}</em></span>
+          <span class="text-[10px] text-forest font-semibold">${item.mode} • ${item.timestamp}</span>
+        </div>`)
+        .join('');
+    }
+
+    // Copy helper using document.execCommand('copy') for iframe compatibility
+    function copyTextToClipboard(text, callback) {
+      const tempInput = document.createElement('textarea');
+      tempInput.value = text;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand('copy');
+        if (callback) callback();
+      } catch (err) {
+        // Fallback silent handling
+      }
+      document.body.removeChild(tempInput);
+    }
+
+    function copyShareLink() {
+      copyTextToClipboard('https://jeevify.in', () => {
+        const btnText = document.getElementById('copy-btn-text');
+        btnText.textContent = 'Copied jeevify.in link! ✓';
+        setTimeout(() => {
+          btnText.textContent = 'Share jeevify.in with a friend';
+        }, 2500);
+      });
+    }
+
+    function copyEmailAddress() {
+      copyTextToClipboard('hello@jeevify.in', () => {
+        const btn = document.getElementById('copy-email-btn');
+        btn.textContent = 'Copied ✓';
+        setTimeout(() => {
+          btn.textContent = 'Copy Email';
+        }, 2500);
+      });
+    }
+
+    // Modal Dialog Controls
+    function openModal(id, customSource) {
+      if (id === 'quick-waitlist-modal' && customSource) {
+        const srcInput = document.getElementById('modal-waitlist-source');
+        if (srcInput) srcInput.value = customSource;
+      }
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+  </script>
+</body>
+</html>
